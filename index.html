@@ -3,33 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Az én oldalam</title>
+  <title>Az én weboldalam</title>
 
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-  margin: 0;
-  padding-top: 60px;
-  background: #f4f4f4;
-  color: #333;
+      background: #f5f6fa;
+      color: #333;
+      padding-top: 70px;
     }
 
+    /* FIX MENÜ */
     nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
       background: #1f2a36;
-  padding: 15px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+    }
 
     .menu {
-  max-width: 800px;
-  margin: auto;
-  display: flex;
-  gap: 20px;
-  align-items: center;
+      max-width: 1000px;
+      width: 100%;
+      margin: auto;
+      display: flex;
+      gap: 25px;
+      padding: 0 20px;
     }
 
     .menu a {
@@ -42,27 +46,20 @@
       color: #3498db;
     }
 
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 40px;
-      text-align: center;
-    }
-
+    /* SZEKCIÓK */
     section {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 40px auto;
       background: white;
-      padding: 20px;
+      padding: 25px;
       border-radius: 10px;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
+    h2 {
+      margin-top: 0;
     }
 
+    /* GOMB */
     .button {
       display: inline-block;
       padding: 10px 20px;
@@ -70,44 +67,111 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      margin-top: 10px;
     }
 
     .button:hover {
       background: #2980b9;
+    }
+
+    /* LÁBLÉC */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+
+    /* KÉP HELYEK */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .box {
+      background: #ecf0f1;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- MENÜ -->
   <nav>
     <div class="menu">
-      <a href="#">Főoldal</a>
-      <a href="#about">Rólam</a>
-      <a href="#projects">Projektjeim</a>
+      <a href="#home">Főoldal</a>
+      <a href="#bio">Bio</a>
+      <a href="#images">Képek</a>
+      <a href="#videos">Videók</a>
+      <a href="#links">Linkek</a>
+      <a href="#contact">Elérhetőség</a>
     </div>
   </nav>
 
-  <header>
-    <h1>Szia, ez az én weboldalam 👋</h1>
-    <p>GitHub Pages alap weboldal</p>
-  </header>
+  <!-- FŐOLDAL -->
+  <section id="home">
+    <h2>Üdv a weboldalamon 👋</h2>
+    <p>Ez egy letisztult alap weboldal GitHub Pages-hez.</p>
+  </section>
 
-  <section id="about">
+  <!-- BIO -->
+  <section id="bio">
     <h2>Rólam</h2>
-    <p>Itt tudsz magadról írni. Később ezt bővítjük.</p>
-
-    <a class="button" href="https://github.com/">GitHub profilom</a>
+    <p>Itt lesz a bemutatkozásod. Később ezt tudjuk bővíteni.</p>
   </section>
 
-  <section id="projects">
-    <h2>Projektjeim</h2>
-    <p>Itt majd megjelennek a dolgaid.</p>
+  <!-- KÉPEK -->
+  <section id="images">
+    <h2>Képek</h2>
+    <div class="gallery">
+      <div class="box">Kép helye</div>
+      <div class="box">Kép helye</div>
+      <div class="box">Kép helye</div>
+    </div>
   </section>
 
+  <!-- VIDEÓK -->
+  <section id="videos">
+    <h2>Videók</h2>
+    <p>Itt majd YouTube videókat is be tudunk rakni.</p>
+  </section>
+
+  <!-- LINKEK -->
+  <section id="links">
+    <h2>Linkek</h2>
+    <a class="button" href="https://github.com/">GitHub profil</a>
+  </section>
+
+  <!-- ELÉRHETŐSÉG -->
+  <section id="contact">
+    <h2>Elérhetőség</h2>
+    <p>Email: pelda@email.com</p>
+  </section>
+
+  <!-- LÁTOGATÓSZÁM (egyszerű verzió) -->
   <footer>
-    <p>© 2026 - Az én oldalam</p>
+    <p>© 2026 - Az én weboldalam he</p>
+    <p>Látogatások száma: <span id="count">0</span></p>
   </footer>
+
+  <script>
+    // EGYSZERŰ SZÁMLÁLÓ (böngésző alapú, nem tökéletes, de működik demohoz)
+    let count = localStorage.getItem("visits");
+
+    if (!count) {
+      count = 0;
+    }
+
+    count++;
+    localStorage.setItem("visits", count);
+
+    document.getElementById("count").innerText = count;
+  </script>
 
 </body>
 </html>
