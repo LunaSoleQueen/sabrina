@@ -13,6 +13,28 @@
       color: #333;
     }
 
+    nav {
+      background: #1f2a36;
+      padding: 15px;
+    }
+
+    .menu {
+      max-width: 800px;
+      margin: auto;
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu a:hover {
+      color: #3498db;
+    }
+
     header {
       background: #2c3e50;
       color: white;
@@ -51,19 +73,27 @@
 
 <body>
 
+  <nav>
+    <div class="menu">
+      <a href="#">Főoldal</a>
+      <a href="#about">Rólam</a>
+      <a href="#projects">Projektjeim</a>
+    </div>
+  </nav>
+
   <header>
     <h1>Szia, ez az én weboldalam 👋</h1>
     <p>GitHub Pages alap weboldal</p>
   </header>
 
-  <section>
+  <section id="about">
     <h2>Rólam</h2>
     <p>Itt tudsz magadról írni. Később ezt bővítjük.</p>
 
     <a class="button" href="https://github.com/">GitHub profilom</a>
   </section>
 
-  <section>
+  <section id="projects">
     <h2>Projektjeim</h2>
     <p>Itt majd megjelennek a dolgaid.</p>
   </section>
