@@ -4,14 +4,33 @@
 <title>Gallery</title>
 
 <meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/templatemo_style.css">
 
 <style>
-body {
-  background: #111;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  background: transparent !important;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -9999;
+}
+
+.container, .row {
+  position: relative;
+  z-index: 1;
 }
 
 /* GALLERY IMAGES */
@@ -51,7 +70,10 @@ body {
 
 <body>
 
-<!-- NAV (marad az eredeti template-ből) -->
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="images/web_bg_kicsi.mp4" type="video/mp4">
+</video>
+
 <div class="container menu">
   <div class="row">
     <div class="col-sm-12">
@@ -67,7 +89,6 @@ body {
   </div>
 </div>
 
-<!-- GALLERY -->
 <div class="container">
   <div class="row">
 
@@ -98,7 +119,6 @@ body {
   </div>
 </div>
 
-<!-- LIGHTBOX -->
 <div id="lightbox">
   <img id="lightbox-img">
 </div>
@@ -108,18 +128,15 @@ body {
 <script>
 $(document).ready(function(){
 
-  // OPEN LIGHTBOX
   $(".gallery-img").click(function(){
     $("#lightbox").fadeIn();
     $("#lightbox-img").attr("src", $(this).attr("src"));
   });
 
-  // CLOSE ON CLICK
   $("#lightbox").click(function(){
     $(this).fadeOut();
   });
 
-  // CLOSE ON ESC
   $(document).keydown(function(e){
     if(e.key === "Escape"){
       $("#lightbox").fadeOut();
