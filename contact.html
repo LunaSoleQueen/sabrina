@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Green Template, Contact</title>
+<title>Contact</title>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
 
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -16,27 +17,30 @@
 
 <style>
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-    background: transparent !important;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
 }
 
+body {
+  background: transparent !important;
+}
+
+/* VIDEO BACKGROUND */
 #bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -9999;
-    pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
-.container, .row {
-    position: relative;
-    z-index: 1;
+.container {
+  position: relative;
+  z-index: 1;
 }
 </style>
 
@@ -44,71 +48,79 @@ html, body {
 
 <body>
 
+<!-- BACKGROUND VIDEO -->
 <video autoplay muted loop playsinline id="bg-video">
-    <source src="images/web_bg_kicsi.mp4" type="video/mp4">
+  <source src="images/web_bg_kicsi.mp4" type="video/mp4">
 </video>
 
+<!-- MENU -->
 <div class="container menu">
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="templatemo_webtitle">
-                <img src="images/templatemo_logo.png" alt="logo">
-            </div>
-        </div>
-
-        <div class="col-sm-8">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-collapse collapse main_menu">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html">HOME</a></li>
-                            <li><a href="about.html">ABOUT</a></li>
-                            <li><a href="gallery.html">GALLERY</a></li>
-                            <li class="current"><a href="contact.html">CONTACT</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="templatemo_webtitle">
+        <img src="images/logo lsq vége.png" alt="logo">
+      </div>
     </div>
+
+    <div class="col-sm-8">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-collapse collapse main_menu">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="gallery.html">GALLERY</a></li>
+              <li class="current"><a href="contact.html">CONTACT</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
 </div>
 
+<!-- CONTACT TOP -->
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="templatemo_contact_top shadow">
-                <div class="templatemo_contact_top_title">CONTACT INFORMATION</div>
-                <div class="templatemo_contact_top_sub">LOREM RUIS BIBENDUM</div>
-                <p>Contact page content...</p>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="templatemo_contact_top shadow">
+        <div class="templatemo_contact_top_title">CONTACT</div>
+        <div class="templatemo_contact_top_sub">GET IN TOUCH</div>
+        <p>
+          Contact page with fixed video background working on all tabs.
+        </p>
+      </div>
     </div>
+  </div>
 </div>
 
+<!-- CONTACT FORM -->
 <div class="container">
-    <div class="row margin30">
-        <div class="col-md-12">
-            <div class="templatemo_contact shadow">
-                <div class="title">CONTACT US</div>
-                <div class="subtitle">LOREM RUIS BIBENDUM</div>
+  <div class="row margin30">
+    <div class="col-md-12">
+      <div class="templatemo_contact shadow">
 
-                <div class="col-md-6">
-                    <form action="#" method="post">
-                        <input type="text" placeholder="NAME">
-                        <input type="text" placeholder="EMAIL">
-                        <textarea placeholder="MESSAGE"></textarea>
-                        <button type="submit">SEND</button>
-                    </form>
-                </div>
+        <div class="title">CONTACT US</div>
+        <div class="subtitle">SEND A MESSAGE</div>
 
-                <div class="col-md-6">
-                    <div id="templatemo_map"></div>
-                </div>
-
-                <div class="clear"></div>
-            </div>
+        <div class="col-md-6">
+          <form action="#" method="post">
+            <input type="text" placeholder="NAME">
+            <input type="text" placeholder="EMAIL">
+            <textarea placeholder="MESSAGE"></textarea>
+            <button type="submit">SEND</button>
+          </form>
         </div>
+
+        <div class="col-md-6">
+          <div id="templatemo_map"></div>
+        </div>
+
+        <div style="clear:both;"></div>
+
+      </div>
     </div>
+  </div>
 </div>
 
 </body>
