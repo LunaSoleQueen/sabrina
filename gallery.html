@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/templatemo_misc.css">
 <link rel="stylesheet" href="css/templatemo_style.css">
 
 <style>
@@ -15,25 +17,29 @@ html, body {
   padding: 0;
   height: 100%;
   overflow-x: hidden;
+}
+
+body {
   background: transparent !important;
 }
 
+/* VIDEO BACKGROUND */
 #bg-video {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: -9999;
+  z-index: -1;
 }
 
-.container, .row {
+.container {
   position: relative;
   z-index: 1;
 }
 
-/* GALLERY IMAGES */
+/* GALLERY */
 .gallery-img {
   width: 100%;
   cursor: pointer;
@@ -52,7 +58,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.92);
+  background: rgba(0,0,0,0.9);
   display: none;
   align-items: center;
   justify-content: center;
@@ -70,10 +76,12 @@ html, body {
 
 <body>
 
+<!-- BACKGROUND VIDEO -->
 <video autoplay muted loop playsinline id="bg-video">
   <source src="images/web_bg_kicsi.mp4" type="video/mp4">
 </video>
 
+<!-- MENU -->
 <div class="container menu">
   <div class="row">
     <div class="col-sm-12">
@@ -89,6 +97,7 @@ html, body {
   </div>
 </div>
 
+<!-- GALLERY -->
 <div class="container">
   <div class="row">
 
@@ -119,6 +128,7 @@ html, body {
   </div>
 </div>
 
+<!-- LIGHTBOX -->
 <div id="lightbox">
   <img id="lightbox-img">
 </div>
@@ -134,7 +144,7 @@ $(document).ready(function(){
   });
 
   $("#lightbox").click(function(){
-    $(this).fadeOut();
+    $("#lightbox").fadeOut();
   });
 
   $(document).keydown(function(e){
