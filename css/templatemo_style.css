@@ -5,7 +5,7 @@ http://www.templatemo.com/preview/templatemo_449_green
 
 */
 
-body { font: 13px/1.85em 'Open Sans', Arial, Helvetice Neue, sans-serif; color: #fff; font-weight: 300; font-style: normal; -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */ -webkit-text-size-adjust: 100%; background: url(../images/web_bg_kicsi.mp4) repeat #01090c top center; background-attachment: fixed; }
+body { font: 13px/1.85em 'Open Sans', Arial, Helvetice Neue, sans-serif; color: #fff; font-weight: 300; font-style: normal; -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */ -webkit-text-size-adjust: 100%; background: url(../images/web_bg_kicsi.mp4) no-repeat #01090c top center; background-attachment: fixed; }
 
 html {  
 
@@ -46,7 +46,7 @@ h1 { width: 100%; font-size: 36px; color: #747474; text-align: center; }
 	}
 .templatemo_home_top img{ width: 100%;}
 .templatemo_home_top_left { 
-    background: url(../images/web_bg_kicsi.mp4) repeat #0a4651;
+    background: url(../images/web_bg_kicsi.mp4) no-repeat #0a4651;
 	background-position: top right;
 	color: #8cd2de;
 	margin-right: -30px;
@@ -246,7 +246,7 @@ h1 { width: 100%; font-size: 36px; color: #747474; text-align: center; }
 
 .templatemo_about_top { 
 	border: 1px solid #0a7e8b; 
-	background: url(../images/web_bg_kicsi.mp4) repeat #0a4651;
+	background: url(../images/web_bg_kicsi.mp4) no-repeat #0a4651;
 	background-position: top right;
 	padding: 50px 30px;
 	color: #adf2ff;
@@ -360,7 +360,7 @@ h1 { width: 100%; font-size: 36px; color: #747474; text-align: center; }
 .templatemo_gallery_top img{ width: 100%;}
 .templatemo_gallery_top_left { 
 	min-height: 420px; 
-    background: url(../images/web_bg_kicsi.mp4) repeat #0a4651;
+    background: url(../images/web_bg_kicsi.mp4) no-repeat #0a4651;
 	background-position: top right;
 	color: #8cd2de;
 	margin-right: -30px;
@@ -462,7 +462,7 @@ h1 { width: 100%; font-size: 36px; color: #747474; text-align: center; }
 	}
 .templatemo_contact_top { 
 	border: 1px solid #0a7e8b; 
-	background: url(../images/web_bg_kicsi.mp4) repeat #0a4651;
+	background: url(../images/web_bg_kicsi.mp4) no-repeat #0a4651;
 	background-position: top right;
 	padding: 50px 30px;
 	color: #adf2ff;
