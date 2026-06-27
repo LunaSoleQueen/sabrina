@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Green Template</title>
+<title>Home</title>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
-
-<link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/jquery-ui.css">
-<link rel="stylesheet" href="css/templatemo_misc.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/templatemo_style.css">
 
 <style>
@@ -23,10 +18,12 @@ html, body {
   overflow-x: hidden;
 }
 
+/* NINCS FEKETE HÁTTÉR */
 body {
   background: transparent !important;
 }
 
+/* VIDEÓ HÁTTÉR */
 #bg-video {
   position: fixed;
   top: 0;
@@ -37,9 +34,30 @@ body {
   z-index: -1;
 }
 
+/* TARTALOM A VIDEÓ FELETT */
 .container {
   position: relative;
   z-index: 1;
+}
+
+/* 🔥 LILA + 50% ÁTLÁTSZÓ BOXOK */
+.box,
+.templatemo_home_top_left,
+.templatemo_home_midleft,
+.templatemo_home_midmid,
+.templatemo_home_botleft,
+.templatemo_home_botright {
+  background: rgba(130, 70, 200, 0.5) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* GOMBOK */
+button,
+.templatemo_buttongreen {
+  background: rgba(130, 70, 200, 0.8) !important;
+  color: #fff !important;
+  border-left: 10px solid rgba(80, 30, 140, 0.8) !important;
 }
 </style>
 
@@ -47,7 +65,7 @@ body {
 
 <body>
 
-<!-- BACKGROUND VIDEO -->
+<!-- VIDEÓ -->
 <video autoplay muted loop playsinline id="bg-video">
   <source src="images/web_bg_kicsi.mp4" type="video/mp4">
 </video>
@@ -56,24 +74,16 @@ body {
 <div class="container menu">
   <div class="row">
     <div class="col-sm-4">
-      <div class="templatemo_webtitle">
-        <img src="images/logo lsq vége.png" alt="logo">
-      </div>
+      <img src="images/logo lsq vége.png" style="max-width:180px;">
     </div>
 
     <div class="col-sm-8">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-collapse collapse main_menu">
-            <ul class="nav navbar-nav">
-              <li class="current"><a href="index.html">HOME</a></li>
-              <li><a href="about.html">ABOUT</a></li>
-              <li><a href="gallery.html">GALLERY</a></li>
-              <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <ul class="nav navbar-nav">
+        <li class="current"><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
     </div>
   </div>
 </div>
@@ -82,45 +92,38 @@ body {
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <div class="templatemo_home_top_left shadow">
-        <div class="templatemo_hometop_title">WELCOME</div>
-        <div class="templatemo_hometop_stitle">GREEN TEMPLATE</div>
-
-        <p>Full screen video background fixed version.</p>
-
-        <a href="#"><div class="templatemo_buttongreen">BUTTON</div></a>
+      <div class="templatemo_home_top_left">
+        <h1>WELCOME</h1>
+        <p>Full screen video background site.</p>
       </div>
     </div>
 
     <div class="col-md-4">
-      <img src="images/templatemo_home01.jpg" class="shadow" style="width:100%;">
+      <img src="images/templatemo_home01.jpg" style="width:100%;">
     </div>
   </div>
 </div>
 
-<!-- CONTENT -->
+<!-- BOXOK -->
 <div class="container">
-  <div class="row margin30">
+  <div class="row">
 
     <div class="col-md-4">
-      <div class="templatemo_home_midleft shadow">
-        <div class="templatemo_home_midleft_in">
-          <div class="small">TITLE</div>
-          <div class="big">SECTION</div>
-        </div>
+      <div class="templatemo_home_midleft">
+        LEFT BOX
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="templatemo_home_midmid shadow">
-        <div class="big">CONTENT</div>
-        <div class="small">SUBTITLE</div>
-        <div class="para">Text block</div>
+      <div class="templatemo_home_midmid">
+        CENTER BOX
       </div>
     </div>
 
     <div class="col-md-4">
-      <img src="images/templatemo_home02.jpg" style="width:100%;" class="shadow">
+      <div class="templatemo_home_midleft">
+        RIGHT BOX
+      </div>
     </div>
 
   </div>
