@@ -24,16 +24,22 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background: transparent !important;
 }
 
 #bg-video {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
-    z-index: -1;
+    z-index: -9999;
+    pointer-events: none;
+}
+
+.container, .row {
+    position: relative;
+    z-index: 1;
 }
 </style>
 
@@ -49,7 +55,7 @@ html, body {
     <div class="row">
         <div class="col-sm-4">
             <div class="templatemo_webtitle">
-                <img src="images/logo lsq vége.png">
+                <img src="images/logo lsq vége.png" alt="logo">
             </div>
         </div>
 
@@ -81,7 +87,9 @@ html, body {
                 <div class="templatemo_home_top_left shadow">
                     <div class="templatemo_hometop_title">NAM AUCTOR</div>
                     <div class="templatemo_hometop_stitle">LOREM RUIS BIBENDUM</div>
-                    <p>Content here...</p>
+                    <p>
+                        Green template content here...
+                    </p>
                 </div>
             </div>
         </div>
