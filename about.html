@@ -6,13 +6,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
-
-<link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/jquery-ui.css">
-<link rel="stylesheet" href="css/templatemo_misc.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/templatemo_style.css">
 
 <style>
@@ -41,6 +36,19 @@ body {
   position: relative;
   z-index: 1;
 }
+
+/* 🔥 LILA + 50% ÁTLÁTSZÓ DESIGN */
+.templatemo_about_top,
+.templatemo_aboutmid {
+  background: rgba(130, 70, 200, 0.5) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+button {
+  background: rgba(130, 70, 200, 0.8) !important;
+  color: #fff !important;
+}
 </style>
 
 </head>
@@ -56,68 +64,53 @@ body {
 <div class="container menu">
   <div class="row">
     <div class="col-sm-4">
-      <div class="templatemo_webtitle">
-        <img src="images/logo lsq vége.png" alt="logo">
-      </div>
+      <img src="images/logo lsq vége.png" style="max-width:180px;">
     </div>
 
     <div class="col-sm-8">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-collapse collapse main_menu">
-            <ul class="nav navbar-nav">
-              <li><a href="index.html">HOME</a></li>
-              <li class="current"><a href="about.html">ABOUT</a></li>
-              <li><a href="gallery.html">GALLERY</a></li>
-              <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">HOME</a></li>
+        <li class="current"><a href="about.html">ABOUT</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
     </div>
   </div>
 </div>
 
-<!-- ABOUT TOP -->
+<!-- ABOUT CONTENT -->
 <div class="container">
   <div class="row">
+
     <div class="col-md-12">
-      <div class="templatemo_about_top shadow">
-        <div class="templatemo_about_top_title">WHO WE ARE</div>
-        <div class="templatemo_about_top_sub">ABOUT PAGE</div>
-        <p>
-          This is the about page with fixed video background.
-        </p>
+      <div class="templatemo_about_top">
+        <h1>WHO WE ARE</h1>
+        <p>About page with fixed video background.</p>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- ABOUT BOXES -->
-<div class="container">
+  </div>
+
   <div class="row margin30">
 
     <div class="col-md-4">
-      <div class="templatemo_aboutmid shadow">
-        <div class="circle">1</div>
-        <div class="title">SECTION ONE</div>
-        <div class="text">Text content here.</div>
+      <div class="templatemo_aboutmid">
+        <h2>1</h2>
+        <p>First box content</p>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="templatemo_aboutmid shadow">
-        <div class="circle">2</div>
-        <div class="title">SECTION TWO</div>
-        <div class="text">Text content here.</div>
+      <div class="templatemo_aboutmid">
+        <h2>2</h2>
+        <p>Second box content</p>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="templatemo_aboutmid shadow">
-        <div class="circle">3</div>
-        <div class="title">SECTION THREE</div>
-        <div class="text">Text content here.</div>
+      <div class="templatemo_aboutmid">
+        <h2>3</h2>
+        <p>Third box content</p>
       </div>
     </div>
 
