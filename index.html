@@ -22,7 +22,6 @@ body {
     background: transparent !important;
 }
 
-/* ===== VIDEO BACKGROUND ===== */
 #bg-video {
     position: fixed;
     top: 0;
@@ -33,25 +32,41 @@ body {
     z-index: -1;
 }
 
-/* ===== MENU + CONTENT FIX ===== */
-.container {
-    position: relative;
-    z-index: 1;
+.templatemo_home_top_left {
+    background: rgba(130,70,200,.45) !important;
+    border: 2px solid #ff66cc !important;
+    border-radius: 16px !important;
+    color: #fff !important;
+    padding: 20px !important;
+    height: 500px !important;
+    min-height: 500px !important;
+    max-height: 500px !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-/* ===== HERO IMAGE FIX ===== */
+.templatemo_home_midleft,
+.templatemo_home_midmid,
+.templatemo_home_midright {
+    background: rgba(130,70,200,.45) !important;
+    border: 2px solid #ff66cc !important;
+    border-radius: 16px !important;
+    color: #fff !important;
+    padding: 20px !important;
+    min-height: 140px !important;
+}
+
 .hero-img {
     width: 100%;
     height: 533px;
     object-fit: cover;
     border-radius: 16px;
-    display: block;
 }
 
-/* ===== FLEX FIX (IMPORTANT RIGHT BOX BUG FIX) ===== */
 .row-flex {
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .row-flex > div {
@@ -62,47 +77,6 @@ body {
     width: 100%;
 }
 
-/* ===== BOX DESIGN (UPDATED) ===== */
-.templatemo_home_midleft,
-.templatemo_home_midmid,
-.templatemo_home_midright {
-
-    background: rgba(130,70,200,.35) !important;
-
-    color: #fff !important;
-
-    border: 2px solid #ff66cc !important;
-
-    border-radius: 18px;
-
-    padding: 18px;
-
-    box-shadow: 0 6px 18px rgba(0,0,0,.25);
-
-    height: 160px;          /* <<< FIX: all same height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* ===== SMALLER BOXES ===== */
-.templatemo_home_midleft,
-.templatemo_home_midmid,
-.templatemo_home_midright {
-    min-height: 140px;
-}
-
-/* ===== BUTTON ===== */
-button,
-.templatemo_buttongreen {
-    background: rgba(130,70,200,.8) !important;
-    color: #fff !important;
-    border-left: 10px solid rgba(80,30,140,.8) !important;
-    border-radius: 10px;
-}
-
-/* ===== COUNTER ===== */
 .site-counter {
     position: fixed;
     bottom: 10px;
@@ -120,8 +94,8 @@ button,
     padding: 8px 12px;
     border-radius: 12px;
     font-size: 13px;
-    backdrop-filter: blur(5px);
 }
+
 .counter-box.online {
     border-color: #00ffcc;
 }
@@ -131,80 +105,53 @@ button,
 
 <body>
 
-<!-- VIDEO -->
 <video autoplay muted loop playsinline id="bg-video">
     <source src="images/web_bg_kicsi.mp4" type="video/mp4">
 </video>
 
-<!-- MENU -->
-<div class="container menu">
-  <div class="row">
-    <div class="col-sm-4">
-      <img src="images/logo lsq vége.png" style="max-width:180px;">
-    </div>
-
-    <div class="col-sm-8">
-      <ul class="nav navbar-nav">
-        <li class="current"><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="gallery.html">GALLERY</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- HERO -->
 <div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="templatemo_home_top_left">
-        <h1>WELCOME</h1>
-        <p>Full screen video background site.</p>
-      </div>
-    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="templatemo_home_top_left">
+                <h1>WELCOME</h1>
+                <p>Full screen video background site.</p>
+            </div>
+        </div>
 
-    <div class="col-md-4">
-      <img class="hero-img" src="images/P1100190_home01m.jpg">
+        <div class="col-md-4">
+            <img class="hero-img" src="images/P1100190_home01m.jpg">
+        </div>
     </div>
-  </div>
 </div>
 
-<!-- BOXOK -->
 <div class="container">
-  <div class="row row-flex">
+    <div class="row row-flex">
 
-    <div class="col-md-4">
-      <div class="templatemo_home_midleft">
-        LEFT BOX
-      </div>
+        <div class="col-md-4">
+            <div class="templatemo_home_midleft">LEFT BOX</div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="templatemo_home_midmid">CENTER BOX</div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="templatemo_home_midright">RIGHT BOX</div>
+        </div>
+
     </div>
-
-    <div class="col-md-4">
-      <div class="templatemo_home_midmid">
-        CENTER BOX
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="templatemo_home_midright">
-        RIGHT BOX
-      </div>
-    </div>
-
-  </div>
 </div>
 
-<!-- COUNTER -->
 <div class="site-counter">
-    <div class="counter-box">Today: <span id="today">0</span></div>
-    <div class="counter-box">Yesterday: <span id="yesterday">0</span></div>
-    <div class="counter-box">All: <span id="all">0</span></div>
-    <div class="counter-box online">Online: <span id="online">1</span></div>
+    <div class="counter-box">Today: <span id="today"></span></div>
+    <div class="counter-box">Yesterday: <span id="yesterday"></span></div>
+    <div class="counter-box">All: <span id="all"></span></div>
+    <div class="counter-box online">Online: <span id="online"></span></div>
 </div>
 
 <script>
 (function(){
+
     let today = localStorage.getItem("today") || 0;
     let yesterday = localStorage.getItem("yesterday") || 0;
     let all = localStorage.getItem("all") || 0;
@@ -230,6 +177,7 @@ button,
     document.getElementById("all").innerText = all;
 
     document.getElementById("online").innerText = 1;
+
 })();
 </script>
 
