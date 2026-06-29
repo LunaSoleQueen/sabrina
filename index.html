@@ -22,7 +22,7 @@ body {
     background: transparent !important;
 }
 
-/* VIDEÓ HÁTTÉR */
+/* ===== VIDEO BACKGROUND ===== */
 #bg-video {
     position: fixed;
     top: 0;
@@ -33,19 +33,34 @@ body {
     z-index: -1;
 }
 
-/* TARTALOM */
+/* ===== CONTENT ===== */
 .container {
     position: relative;
     z-index: 2;
 }
 
-/* ===== BOXOK ===== */
+/* ===== FLEX FIX (EZ OLDJA MEG A CSÚSZÁST) ===== */
+.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-flex > div {
+    display: flex;
+}
+
+.row-flex > div > div {
+    width: 100%;
+}
+
+/* ===== BOX DESIGN ===== */
 .templatemo_home_top_left,
 .templatemo_home_midleft,
 .templatemo_home_midmid,
 .templatemo_home_midright {
 
     background: rgba(130,70,200,.45) !important;
+
     color: #fff !important;
 
     border: 2px solid #ff66cc !important;
@@ -62,24 +77,25 @@ body {
     margin-bottom: 20px;
 }
 
-/* ALSÓ BOXOK KISEBBEK */
+/* egységes magasság */
 .templatemo_home_midleft,
 .templatemo_home_midmid,
 .templatemo_home_midright {
-    min-height: 150px;
+    min-height: 160px;
 }
 
-/* FELSŐ BOX */
+/* hero */
 .templatemo_home_top_left {
-    min-height: 200px;
+    min-height: 220px;
 }
 
-/* KÉPEK */
+/* kép */
 img {
     border-radius: 16px;
+    width: 100%;
 }
 
-/* GOMBOK */
+/* gomb */
 button,
 .templatemo_buttongreen {
     background: rgba(130,70,200,.8) !important;
@@ -120,7 +136,7 @@ button,
 
 <body>
 
-<!-- VIDEÓ -->
+<!-- VIDEO -->
 <video autoplay muted loop playsinline id="bg-video">
     <source src="images/web_bg_kicsi.mp4" type="video/mp4">
 </video>
@@ -154,14 +170,14 @@ button,
         </div>
 
         <div class="col-md-4">
-            <img src="images/P1100190_home01.jpg" style="width:100%;">
+            <img src="images/templatemo_home01.jpg">
         </div>
     </div>
 </div>
 
-<!-- BOXOK -->
+<!-- BOXOK (FIXED ALIGNMENT) -->
 <div class="container">
-    <div class="row">
+    <div class="row row-flex">
 
         <div class="col-md-4">
             <div class="templatemo_home_midleft">LEFT BOX</div>
@@ -186,7 +202,6 @@ button,
     <div class="counter-box online">Online: <span id="online">1</span></div>
 </div>
 
-<!-- JS COUNTER -->
 <script>
 (function(){
 
