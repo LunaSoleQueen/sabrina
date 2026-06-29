@@ -1,83 +1,24 @@
-/* Green Template - MODIFIED VERSION */
-
-body {
-    font: 13px/1.85em 'Open Sans', Arial, Helvetica, sans-serif;
-    color: #fff;
-    font-weight: 300;
-    background: #01090c;
-}
-
-/* ===== GLOBAL IMAGE ===== */
-img {
-    width: 100%;
-}
-
-/* ===== LINKS ===== */
-a, a:hover, a:focus {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-/* ===== HEADINGS ===== */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans', Arial, sans-serif;
-}
-
-/* =========================
-   MENU FIX (NE BORULJON)
-========================= */
-.menu {
-    margin-top: 50px;
-}
-
-.navbar {
-    border-radius: 0px;
-    min-height: 80px;
-}
-
-/* =========================
-   HERO BOX (bal felső)
-========================= */
-.templatemo_home_top_left {
-    background: rgba(10, 70, 90, 0.75);
-    color: #fff;
-    padding: 40px;
-    border-radius: 18px;
-    border: 2px solid #ff66cc;
-}
-
-/* =========================
-   BOX SYSTEM FIX (LEGFONTOSABB)
-========================= */
 .templatemo_home_midleft,
 .templatemo_home_midmid,
 .templatemo_home_midright {
-
-    background: rgba(130, 70, 200, 0.35);
-    color: #fff;
-
-    border: 2px solid #ff66cc;
-    border-radius: 18px;
-
-    padding: 20px;
-
-    /* >>> EZ OLDJA MEG A RIGHT BOX ELCSÚSZÁST */
-    height: 160px;
+    border: 2px solid #ff66cc !important;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    min-height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-/* =========================
-   FLEX FIX (ROW STABILIZÁLÁS)
-========================= */
+.templatemo_home_midright {
+    margin-top: 0 !important;
+    position: relative !important;
+}
+
 .row-flex {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
 }
 
 .row-flex > div {
@@ -88,57 +29,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-/* =========================
-   IMAGE FIX
-========================= */
-.hero-img {
-    width: 100%;
-    height: 533px;
-    object-fit: cover;
-    border-radius: 18px;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-.templatemo_buttongreen,
-button {
-    background: rgba(130,70,200,0.8);
-    color: #fff;
-    border-left: 10px solid rgba(80,30,140,0.8);
-    border-radius: 10px;
-}
-
-/* =========================
-   COUNTER UI
-========================= */
-.site-counter {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 9999;
-}
-
-.counter-box {
-    background: rgba(130,70,200,0.55);
-    border: 2px solid #ff66cc;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 12px;
-    font-size: 13px;
-    backdrop-filter: blur(6px);
-}
-
-.counter-box.online {
-    border-color: #00ffcc;
-}
-
-/* =========================
-   RESPONSIVE FIX
-========================= */
 @media (max-width: 991px) {
     .row-flex {
         display: block;
@@ -148,6 +38,6 @@ button {
     .templatemo_home_midmid,
     .templatemo_home_midright {
         margin-bottom: 15px;
-        height: auto;
+        min-height: auto;
     }
 }
