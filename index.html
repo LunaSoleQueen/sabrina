@@ -12,52 +12,106 @@
 
 <style>
 html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow-x:hidden;
 }
 
-/* NINCS FEKETE HÁTTÉR */
-body {
-  background: transparent !important;
+body{
+    background:transparent !important;
 }
 
-/* VIDEÓ HÁTTÉR */
-#bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+/* VIDEÓ */
+#bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
 }
 
-/* TARTALOM A VIDEÓ FELETT */
-.container {
-  position: relative;
-  z-index: 1;
+/* Tartalom */
+.container{
+    position:relative;
+    z-index:2;
 }
 
-/* 🔥 LILA + 50% ÁTLÁTSZÓ BOXOK */
-.box,
+/* ===== BOXOK ===== */
+
 .templatemo_home_top_left,
 .templatemo_home_midleft,
 .templatemo_home_midmid,
 .templatemo_home_botleft,
-.templatemo_home_botright {
-  background: rgba(130, 70, 200, 0.5) !important;
-  color: #fff !important;
-  border: none !important;
+.templatemo_home_botmid,
+.templatemo_home_botright{
+
+    background:rgba(130,70,200,.45) !important;
+
+    color:#fff !important;
+
+    border:2px solid #ff66cc !important;
+
+    border-radius:16px;
+
+    padding:22px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.30);
+
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(5px);
+
+    margin-bottom:20px;
 }
 
-/* GOMBOK */
+/* Az alsó három box kisebb legyen */
+
+.templatemo_home_midleft,
+.templatemo_home_midmid{
+    min-height:170px;
+}
+
+/* Hero doboz */
+
+.templatemo_home_top_left{
+    min-height:220px;
+}
+
+/* Kép */
+
+img{
+    border-radius:16px;
+}
+
+/* Gombok */
+
 button,
-.templatemo_buttongreen {
-  background: rgba(130, 70, 200, 0.8) !important;
-  color: #fff !important;
-  border-left: 10px solid rgba(80, 30, 140, 0.8) !important;
+.templatemo_buttongreen{
+
+    background:rgba(130,70,200,.80) !important;
+
+    color:#fff !important;
+
+    border-left:10px solid rgba(80,30,140,.8) !important;
+
+    border-radius:10px;
+}
+
+/* Látogatószámláló */
+
+.visitor-counter{
+    width:100%;
+    text-align:center;
+    margin:30px 0;
+    position:relative;
+    z-index:10;
+}
+
+.visitor-counter a{
+    color:#ffffff;
+    text-decoration:none;
 }
 </style>
 
@@ -66,67 +120,114 @@ button,
 <body>
 
 <!-- VIDEÓ -->
+
 <video autoplay muted loop playsinline id="bg-video">
-  <source src="images/web_bg_kicsi.mp4" type="video/mp4">
+    <source src="images/web_bg_kicsi.mp4" type="video/mp4">
 </video>
 
 <!-- MENU -->
+
 <div class="container menu">
-  <div class="row">
-    <div class="col-sm-4">
-      <img src="images/logo lsq vége.png" style="max-width:180px;">
+
+    <div class="row">
+
+        <div class="col-sm-4">
+            <img src="images/logo lsq vége.png" style="max-width:180px;">
+        </div>
+
+        <div class="col-sm-8">
+
+            <ul class="nav navbar-nav">
+                <li class="current"><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+
+        </div>
+
     </div>
 
-    <div class="col-sm-8">
-      <ul class="nav navbar-nav">
-        <li class="current"><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="gallery.html">GALLERY</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <!-- HERO -->
+
 <div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="templatemo_home_top_left">
-        <h1>WELCOME</h1>
-        <p>Full screen video background site.</p>
-      </div>
+
+    <div class="row">
+
+        <div class="col-md-8">
+
+            <div class="templatemo_home_top_left">
+
+                <h1>WELCOME</h1>
+
+                <p>Full screen video background site.</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <img src="images/templatemo_home01.jpg" style="width:100%;">
+
+        </div>
+
     </div>
 
-    <div class="col-md-4">
-      <img src="images/templatemo_home01.jpg" style="width:100%;">
-    </div>
-  </div>
 </div>
 
-<!-- BOXOK -->
+<!-- ALSÓ 3 BOX -->
+
 <div class="container">
-  <div class="row">
 
-    <div class="col-md-4">
-      <div class="templatemo_home_midleft">
-        LEFT BOX
-      </div>
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="templatemo_home_midleft">
+
+                LEFT BOX
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="templatemo_home_midmid">
+
+                CENTER BOX
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="templatemo_home_midleft">
+
+                RIGHT BOX
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="col-md-4">
-      <div class="templatemo_home_midmid">
-        CENTER BOX
-      </div>
-    </div>
+</div>
 
-    <div class="col-md-4">
-      <div class="templatemo_home_midleft">
-        RIGHT BOX
-      </div>
-    </div>
+<!-- LÁTOGATÓSZÁMLÁLÓ -->
 
-  </div>
+<div class="visitor-counter">
+
+<a href="https://www.counters-free.net/">Counters-Free</a>
+
+<script type="text/javascript" src="https://www.freevisitorcounters.com/auth.php?id=2033802b3dafefed4ba698684617e29ee6be5487"></script>
+
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1583258/t/10"></script>
+
 </div>
 
 </body>
