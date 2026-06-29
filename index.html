@@ -22,7 +22,7 @@ body {
     background: transparent !important;
 }
 
-/* ===== VIDEO ===== */
+/* ===== VIDEO BACKGROUND ===== */
 #bg-video {
     position: fixed;
     top: 0;
@@ -33,28 +33,26 @@ body {
     z-index: -1;
 }
 
-/* ===== CONTAINER ===== */
-.container {
-    position: relative;
-    z-index: 2;
-}
-
-/* ===== FIX ALIGNMENT (FULL STABILITY) ===== */
+/* ===== LAYOUT FIX (EZ OLDJA MEG A RIGHT BOX PROBLÉMÁT) ===== */
 .row-flex {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
 }
 
+/* Bootstrap oszlop teljes magasság */
 .row-flex > div {
     display: flex;
 }
 
+/* BOX KITÖLTÉS */
 .row-flex > div > div {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-/* ===== BOX STYLE ===== */
+/* ===== BOX DESIGN ===== */
 .templatemo_home_top_left,
 .templatemo_home_midleft,
 .templatemo_home_midmid,
@@ -78,19 +76,19 @@ body {
     height: 100%;
 }
 
-/* alsó boxok kisebbek */
+/* ALSÓ BOXOK KISEBBEK */
 .templatemo_home_midleft,
 .templatemo_home_midmid,
 .templatemo_home_midright {
     min-height: 150px;
 }
 
-/* hero */
+/* HERO BOX */
 .templatemo_home_top_left {
     min-height: 220px;
 }
 
-/* ===== IMAGE FIX ===== */
+/* ===== KÉP FIX ===== */
 .hero-img {
     width: 100%;
     height: 220px;
@@ -174,7 +172,7 @@ button,
         </div>
 
         <div class="col-md-4">
-            <img class="hero-img" src="images/P1100190_home01.jpg">
+            <img class="hero-img" src="images/P1100190_home01m.jpg">
         </div>
     </div>
 </div>
