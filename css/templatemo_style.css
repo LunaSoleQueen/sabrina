@@ -1,102 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/templatemo_style.css">
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
 body {
-    font: 13px/1.85em 'Open Sans', Arial, Helvetica Neue, sans-serif;
-    color: #fff;
-    font-weight: 300;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-    background: #01090c;
+    background: transparent !important;
 }
 
-img {
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
-a, a:hover, a:focus {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans', Arial, sans-serif;
-}
-
-h1 {
-    width: 100%;
-    font-size: 36px;
-    color: #747474;
-    text-align: center;
-}
-
-.clear { clear: both; }
-.shadow { box-shadow: 0px 0px 7px #011933; }
-.margin30 { margin-top: 30px; }
-.center { text-align: center; }
-
-.menu {
-    margin-top: 50px;
-}
-
-.navbar {
-    border-radius: 0px;
-    min-height: 80px;
-}
-
-.navbar-default {
-    background: #181818;
-    border-top: 5px solid #1ab2c0;
-    border-left: 1px solid #0a7e8b;
-    border-right: 1px solid #0a7e8b;
-    border-bottom: 1px solid #0a7e8b;
-}
-
-.navbar-default .navbar-nav>li>a {
-    color: #fff;
-}
-
-.templatemo_home_top_left {
-    background: rgba(130, 70, 200, 0.45) !important;
-    border: 2px solid #ff66cc !important;
-    border-radius: 18px !important;
-    color: #fff !important;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.3) !important;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
-
-.templatemo_buttongreen {
-    padding: 10px 0px;
-    margin: 10px 0px;
-    text-align: center;
-    border-left: 10px solid #031f23;
-    font-family: 'Oswald', sans-serif;
-    background: #25596e;
-    color: #ffffff;
-    width: 380px;
-    float: left;
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.templatemo_home_midleft,
-.templatemo_home_midmid,
-.templatemo_home_midright {
-    background: rgba(130, 70, 200, 0.35);
-    color: #fff;
-    border: 2px solid #ff66cc;
-    border-radius: 16px;
-    min-height: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+.container {
+    position: relative;
+    z-index: 1;
 }
 
 .row-flex {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
 }
 
 .row-flex > div {
@@ -105,17 +48,41 @@ h1 {
 
 .row-flex > div > div {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
+.templatemo_home_top_left {
+    background: rgba(130,70,200,.45) !important;
+    border: 2px solid #ff66cc !important;
+    border-radius: 16px;
+    color: #fff !important;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    height: 500px !important;
+    min-height: 500px !important;
+}
+
+.templatemo_home_midleft,
+.templatemo_home_midmid,
 .templatemo_home_midright {
-    margin-top: 0 !important;
+    background: rgba(130,70,200,.45) !important;
+    border: 2px solid #ff66cc !important;
+    border-radius: 16px;
+    color: #fff !important;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    min-height: 140px;
 }
 
 .hero-img {
     width: 100%;
     height: 533px;
     object-fit: cover;
-    border-radius: 18px;
+    border-radius: 16px;
+    display: block;
 }
 
 .site-counter {
@@ -129,28 +96,115 @@ h1 {
 }
 
 .counter-box {
-    background: rgba(130,70,200,0.55);
+    background: rgba(130,70,200,.55);
     border: 2px solid #ff66cc;
     color: #fff;
     padding: 8px 12px;
     border-radius: 12px;
     font-size: 13px;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(5px);
 }
-
 .counter-box.online {
     border-color: #00ffcc;
 }
+</style>
 
-@media (max-width: 991px) {
-    .row-flex {
-        display: block;
+</head>
+
+<body>
+
+<video autoplay muted loop playsinline id="bg-video">
+    <source src="images/web_bg_kicsi.mp4" type="video/mp4">
+</video>
+
+<div class="container menu">
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="images/logo lsq vége.png" style="max-width:180px;">
+        </div>
+
+        <div class="col-sm-8">
+            <ul class="nav navbar-nav">
+                <li class="current"><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="templatemo_home_top_left">
+                <h1>WELCOME</h1>
+                <p>Full screen video background site.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <img class="hero-img" src="images/P1100190_home01m.jpg">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row row-flex">
+
+        <div class="col-md-4">
+            <div class="templatemo_home_midleft">LEFT BOX</div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="templatemo_home_midmid">CENTER BOX</div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="templatemo_home_midright">RIGHT BOX</div>
+        </div>
+
+    </div>
+</div>
+
+<div class="site-counter">
+    <div class="counter-box">Today: <span id="today">0</span></div>
+    <div class="counter-box">Yesterday: <span id="yesterday">0</span></div>
+    <div class="counter-box">All: <span id="all">0</span></div>
+    <div class="counter-box online">Online: <span id="online">1</span></div>
+</div>
+
+<script>
+(function(){
+
+    let today = localStorage.getItem("today") || 0;
+    let yesterday = localStorage.getItem("yesterday") || 0;
+    let all = localStorage.getItem("all") || 0;
+
+    const lastVisit = localStorage.getItem("lastVisit");
+    const now = new Date().toDateString();
+
+    if(lastVisit !== now){
+        yesterday = today;
+        today = 0;
     }
 
-    .templatemo_home_midleft,
-    .templatemo_home_midmid,
-    .templatemo_home_midright {
-        margin-bottom: 15px;
-        min-height: auto;
-    }
-}
+    today = parseInt(today) + 1;
+    all = parseInt(all) + 1;
+
+    localStorage.setItem("today", today);
+    localStorage.setItem("yesterday", yesterday);
+    localStorage.setItem("all", all);
+    localStorage.setItem("lastVisit", now);
+
+    document.getElementById("today").innerText = today;
+    document.getElementById("yesterday").innerText = yesterday;
+    document.getElementById("all").innerText = all;
+
+    document.getElementById("online").innerText = 1;
+
+})();
+</script>
+
+</body>
+</html>
