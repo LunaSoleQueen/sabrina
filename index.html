@@ -33,68 +33,64 @@ body {
     z-index: -1;
 }
 
-/* ===== LAYOUT FIX (EZ OLDJA MEG A RIGHT BOX PROBLÉMÁT) ===== */
-.row-flex {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+/* ===== MENU + CONTENT FIX ===== */
+.container {
+    position: relative;
+    z-index: 1;
 }
 
-/* Bootstrap oszlop teljes magasság */
-.row-flex > div {
-    display: flex;
-}
-
-/* BOX KITÖLTÉS */
-.row-flex > div > div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ===== BOX DESIGN ===== */
-.templatemo_home_top_left,
-.templatemo_home_midleft,
-.templatemo_home_midmid,
-.templatemo_home_midright {
-
-    background: rgba(130,70,200,.45) !important;
-
-    color: #fff !important;
-
-    border: 2px solid #ff66cc !important;
-
-    border-radius: 16px;
-
-    padding: 20px;
-
-    box-shadow: 0 8px 20px rgba(0,0,0,.3);
-
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-
-    height: 100%;
-}
-
-/* ALSÓ BOXOK KISEBBEK */
-.templatemo_home_midleft,
-.templatemo_home_midmid,
-.templatemo_home_midright {
-    min-height: 150px;
-}
-
-/* HERO BOX */
-.templatemo_home_top_left {
-    min-height: 450px;
-}
-
-/* ===== KÉP FIX ===== */
+/* ===== HERO IMAGE FIX ===== */
 .hero-img {
     width: 100%;
     height: 533px;
     object-fit: cover;
     border-radius: 16px;
     display: block;
+}
+
+/* ===== FLEX FIX (IMPORTANT RIGHT BOX BUG FIX) ===== */
+.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-flex > div {
+    display: flex;
+}
+
+.row-flex > div > div {
+    width: 100%;
+}
+
+/* ===== BOX DESIGN (UPDATED) ===== */
+.templatemo_home_midleft,
+.templatemo_home_midmid,
+.templatemo_home_midright {
+
+    background: rgba(130,70,200,.35) !important;
+
+    color: #fff !important;
+
+    border: 2px solid #ff66cc !important;
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,.25);
+
+    height: 160px;          /* <<< FIX: all same height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ===== SMALLER BOXES ===== */
+.templatemo_home_midleft,
+.templatemo_home_midmid,
+.templatemo_home_midright {
+    min-height: 140px;
 }
 
 /* ===== BUTTON ===== */
@@ -125,10 +121,7 @@ button,
     border-radius: 12px;
     font-size: 13px;
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,.3);
 }
-
 .counter-box.online {
     border-color: #00ffcc;
 }
@@ -145,55 +138,61 @@ button,
 
 <!-- MENU -->
 <div class="container menu">
-    <div class="row">
-        <div class="col-sm-4">
-            <img src="images/logo lsq vége.png" style="max-width:180px;">
-        </div>
-
-        <div class="col-sm-8">
-            <ul class="nav navbar-nav">
-                <li class="current"><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="gallery.html">GALLERY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="images/logo lsq vége.png" style="max-width:180px;">
     </div>
+
+    <div class="col-sm-8">
+      <ul class="nav navbar-nav">
+        <li class="current"><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <!-- HERO -->
 <div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="templatemo_home_top_left">
-                <h1>WELCOME</h1>
-                <p>Full screen video background site.</p>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <img class="hero-img" src="images/P1100190_home01m.jpg">
-        </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="templatemo_home_top_left">
+        <h1>WELCOME</h1>
+        <p>Full screen video background site.</p>
+      </div>
     </div>
+
+    <div class="col-md-4">
+      <img class="hero-img" src="images/P1100190_home01m.jpg">
+    </div>
+  </div>
 </div>
 
 <!-- BOXOK -->
 <div class="container">
-    <div class="row row-flex">
+  <div class="row row-flex">
 
-        <div class="col-md-4">
-            <div class="templatemo_home_midleft">LEFT BOX</div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="templatemo_home_midmid">CENTER BOX</div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="templatemo_home_midright">RIGHT BOX</div>
-        </div>
-
+    <div class="col-md-4">
+      <div class="templatemo_home_midleft">
+        LEFT BOX
+      </div>
     </div>
+
+    <div class="col-md-4">
+      <div class="templatemo_home_midmid">
+        CENTER BOX
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="templatemo_home_midright">
+        RIGHT BOX
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <!-- COUNTER -->
@@ -206,7 +205,6 @@ button,
 
 <script>
 (function(){
-
     let today = localStorage.getItem("today") || 0;
     let yesterday = localStorage.getItem("yesterday") || 0;
     let all = localStorage.getItem("all") || 0;
@@ -231,9 +229,7 @@ button,
     document.getElementById("yesterday").innerText = yesterday;
     document.getElementById("all").innerText = all;
 
-    sessionStorage.setItem("online", 1);
     document.getElementById("online").innerText = 1;
-
 })();
 </script>
 
