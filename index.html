@@ -12,106 +12,107 @@
 
 <style>
 html, body {
-    margin:0;
-    padding:0;
-    height:100%;
-    overflow-x:hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
 }
 
-body{
-    background:transparent !important;
+body {
+    background: transparent !important;
 }
 
-/* VIDEÓ */
-#bg-video{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-1;
+/* VIDEÓ HÁTTÉR */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
-/* Tartalom */
-.container{
-    position:relative;
-    z-index:2;
+/* TARTALOM */
+.container {
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== BOXOK ===== */
-
 .templatemo_home_top_left,
 .templatemo_home_midleft,
 .templatemo_home_midmid,
-.templatemo_home_botleft,
-.templatemo_home_botmid,
-.templatemo_home_botright{
+.templatemo_home_midright {
 
-    background:rgba(130,70,200,.45) !important;
+    background: rgba(130,70,200,.45) !important;
+    color: #fff !important;
 
-    color:#fff !important;
+    border: 2px solid #ff66cc !important;
 
-    border:2px solid #ff66cc !important;
+    border-radius: 16px;
 
-    border-radius:16px;
+    padding: 20px;
 
-    padding:22px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.3);
 
-    box-shadow:0 8px 20px rgba(0,0,0,.30);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 
-    backdrop-filter:blur(5px);
-    -webkit-backdrop-filter:blur(5px);
-
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
-/* Az alsó három box kisebb legyen */
-
+/* ALSÓ BOXOK KISEBBEK */
 .templatemo_home_midleft,
-.templatemo_home_midmid{
-    min-height:170px;
+.templatemo_home_midmid,
+.templatemo_home_midright {
+    min-height: 150px;
 }
 
-/* Hero doboz */
-
-.templatemo_home_top_left{
-    min-height:220px;
+/* FELSŐ BOX */
+.templatemo_home_top_left {
+    min-height: 200px;
 }
 
-/* Kép */
-
-img{
-    border-radius:16px;
+/* KÉPEK */
+img {
+    border-radius: 16px;
 }
 
-/* Gombok */
-
+/* GOMBOK */
 button,
-.templatemo_buttongreen{
-
-    background:rgba(130,70,200,.80) !important;
-
-    color:#fff !important;
-
-    border-left:10px solid rgba(80,30,140,.8) !important;
-
-    border-radius:10px;
+.templatemo_buttongreen {
+    background: rgba(130,70,200,.8) !important;
+    color: #fff !important;
+    border-left: 10px solid rgba(80,30,140,.8) !important;
+    border-radius: 10px;
 }
 
-/* Látogatószámláló */
-
-.visitor-counter{
-    width:100%;
-    text-align:center;
-    margin:30px 0;
-    position:relative;
-    z-index:10;
+/* ===== COUNTER ===== */
+.site-counter {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 9999;
 }
 
-.visitor-counter a{
-    color:#ffffff;
-    text-decoration:none;
+.counter-box {
+    background: rgba(130,70,200,.55);
+    border: 2px solid #ff66cc;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+}
+
+.counter-box.online {
+    border-color: #00ffcc;
 }
 </style>
 
@@ -120,115 +121,104 @@ button,
 <body>
 
 <!-- VIDEÓ -->
-
 <video autoplay muted loop playsinline id="bg-video">
     <source src="images/web_bg_kicsi.mp4" type="video/mp4">
 </video>
 
 <!-- MENU -->
-
 <div class="container menu">
-
     <div class="row">
-
         <div class="col-sm-4">
             <img src="images/logo lsq vége.png" style="max-width:180px;">
         </div>
 
         <div class="col-sm-8">
-
             <ul class="nav navbar-nav">
                 <li class="current"><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
-
         </div>
-
     </div>
-
 </div>
 
 <!-- HERO -->
-
 <div class="container">
-
     <div class="row">
-
         <div class="col-md-8">
-
             <div class="templatemo_home_top_left">
-
                 <h1>WELCOME</h1>
-
                 <p>Full screen video background site.</p>
-
             </div>
-
         </div>
 
         <div class="col-md-4">
-
             <img src="images/templatemo_home01.jpg" style="width:100%;">
-
         </div>
-
     </div>
-
 </div>
 
-<!-- ALSÓ 3 BOX -->
-
+<!-- BOXOK -->
 <div class="container">
-
     <div class="row">
 
         <div class="col-md-4">
-
-            <div class="templatemo_home_midleft">
-
-                LEFT BOX
-
-            </div>
-
+            <div class="templatemo_home_midleft">LEFT BOX</div>
         </div>
 
         <div class="col-md-4">
-
-            <div class="templatemo_home_midmid">
-
-                CENTER BOX
-
-            </div>
-
+            <div class="templatemo_home_midmid">CENTER BOX</div>
         </div>
 
         <div class="col-md-4">
-
-            <div class="templatemo_home_midleft">
-
-                RIGHT BOX
-
-            </div>
-
+            <div class="templatemo_home_midright">RIGHT BOX</div>
         </div>
 
     </div>
-
 </div>
 
-<!-- LÁTOGATÓSZÁMLÁLÓ -->
-
-<div class="visitor-counter">
-
-<a href="https://www.counters-free.net/">Counters-Free</a>
-
-<script type="text/javascript" src="https://www.freevisitorcounters.com/auth.php?id=2033802b3dafefed4ba698684617e29ee6be5487"></script>
-
-<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1583258/t/10"></script>
-
+<!-- COUNTER -->
+<div class="site-counter">
+    <div class="counter-box">Today: <span id="today">0</span></div>
+    <div class="counter-box">Yesterday: <span id="yesterday">0</span></div>
+    <div class="counter-box">All: <span id="all">0</span></div>
+    <div class="counter-box online">Online: <span id="online">1</span></div>
 </div>
+
+<!-- JS COUNTER -->
+<script>
+(function(){
+
+    let today = localStorage.getItem("today") || 0;
+    let yesterday = localStorage.getItem("yesterday") || 0;
+    let all = localStorage.getItem("all") || 0;
+
+    const lastVisit = localStorage.getItem("lastVisit");
+    const now = new Date().toDateString();
+
+    if(lastVisit !== now){
+        yesterday = today;
+        today = 0;
+    }
+
+    today = parseInt(today) + 1;
+    all = parseInt(all) + 1;
+
+    localStorage.setItem("today", today);
+    localStorage.setItem("yesterday", yesterday);
+    localStorage.setItem("all", all);
+    localStorage.setItem("lastVisit", now);
+
+    document.getElementById("today").innerText = today;
+    document.getElementById("yesterday").innerText = yesterday;
+    document.getElementById("all").innerText = all;
+
+    sessionStorage.setItem("online", 1);
+    document.getElementById("online").innerText = 1;
+
+})();
+</script>
 
 </body>
 </html>
