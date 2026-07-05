@@ -24,7 +24,7 @@ body {
     background: transparent !important;
 }
 
-/* BACKGROUND VIDEO */
+/* BACKGROUND */
 #bg-video {
     position: fixed;
     top: 0;
@@ -44,7 +44,7 @@ body {
     margin-top: 50px;
 }
 
-/* BOX DESIGN (minden box ugyanaz) */
+/* BOX STYLE */
 .templatemo_home_top_left,
 .templatemo_home_midleft,
 .templatemo_home_midmid,
@@ -57,7 +57,7 @@ body {
     margin-bottom: 15px;
 }
 
-/* 💜 DONATE BOX */
+/* DONATE BOX */
 .paypal-section {
     padding: 25px 20px;
     background: rgba(130,70,200,.45);
@@ -81,7 +81,7 @@ body {
     margin-bottom: 15px;
 }
 
-/* PayPal fix */
+/* PayPal container */
 #paypal-container-2FGRU9WXMWF8U {
     display: flex;
     justify-content: center;
@@ -159,7 +159,7 @@ body {
     </div>
 </div>
 
-<!-- MAIN GRID (FIXED) -->
+<!-- MAIN GRID -->
 <div class="container">
     <div class="row">
 
@@ -168,7 +168,7 @@ body {
 
             <div class="templatemo_home_midleft">LEFT BOX</div>
 
-            <!-- DONATE UNDER LEFT -->
+            <!-- DONATE -->
             <div class="paypal-section">
                 <div class="paypal-title">DONATE</div>
                 <div class="paypal-subtitle">Support the project</div>
@@ -191,16 +191,22 @@ body {
     </div>
 </div>
 
-<!-- PAYPAL SCRIPT -->
+<!-- PAYPAL SDK + SAFE INIT -->
 <script src="https://www.paypal.com/sdk/js?client-id=BAAEP5UkBLYS865bY3McFMLTe6Qw6QGPYZr34QpepJMoyToFFDRfYW9P0GLHBJ6rW5QiktDmcXkcn9PAJM&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
 
 <script>
-paypal.HostedButtons({
-  hostedButtonId: "2FGRU9WXMWF8U",
-}).render("#paypal-container-2FGRU9WXMWF8U");
+window.addEventListener("load", function () {
+    if (window.paypal && document.getElementById("paypal-container-2FGRU9WXMWF8U")) {
+        paypal.HostedButtons({
+            hostedButtonId: "2FGRU9WXMWF8U",
+        }).render("#paypal-container-2FGRU9WXMWF8U");
+    } else {
+        console.error("PayPal nem töltött be vagy nincs container");
+    }
+});
 </script>
 
-<!-- CURSOR JS -->
+<!-- CURSOR -->
 <script src="js/cursor.js?v=2"></script>
 
 </body>
