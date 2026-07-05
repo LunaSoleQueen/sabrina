@@ -1,19 +1,20 @@
 const dot = document.querySelector(".cursor-dot");
 
-let mouseX = 0;
-let mouseY = 0;
+if (!dot) {
+    console.log("cursor-dot missing");
+} else {
 
-window.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    window.addEventListener("mousemove", (e) => {
 
-    dot.style.left = mouseX + "px";
-    dot.style.top = mouseY + "px";
+        dot.style.left = e.clientX + "px";
+        dot.style.top = e.clientY + "px";
 
-    createSparkle(mouseX, mouseY);
-});
+        createSparkle(e.clientX, e.clientY);
 
-/* csillag por */
+    });
+
+}
+
 function createSparkle(x, y){
 
     if(Math.random() > 0.35) return;
@@ -21,7 +22,7 @@ function createSparkle(x, y){
     const s = document.createElement("div");
     s.className = "sparkle";
 
-    const size = 6 + Math.random()*10;
+    const size = 6 + Math.random()*8;
 
     s.style.width = size + "px";
     s.style.height = size + "px";
@@ -37,7 +38,7 @@ function createSparkle(x, y){
     let scale = 1;
 
     function animate(){
-        opacity -= 0.02;
+        opacity -= 0.03;
         scale += 0.02;
 
         x += dx;
