@@ -8,6 +8,7 @@
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/cursor.css?v=2">
 
 <style>
 html, body {
@@ -16,6 +17,8 @@ html, body {
     height: 100%;
     overflow-x: hidden;
     background: transparent;
+    cursor: none !important;
+    font-family: Arial, sans-serif;
 }
 
 /* BACKGROUND */
@@ -38,6 +41,19 @@ body::before {
         rgba(0,0,0,0.85)
     );
     z-index: -1;
+}
+
+/* CURSOR (NINCS DUPLIKÁCIÓ — CSAK CSS BETÖLTÉS) */
+.cursor-dot {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, #b56bff, #6a00ff);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 999999;
+    box-shadow: 0 0 15px #b56bff;
 }
 
 /* MENU */
@@ -77,7 +93,7 @@ body::before {
     border-radius: 16px;
 }
 
-/* PAYPAL WRAPPER (FONTOS FIX) */
+/* PAYPAL FIX (FONTOS) */
 .paypal-wrapper {
     margin-top: 15px;
     padding: 18px;
@@ -92,17 +108,11 @@ body::before {
     overflow: hidden;
 }
 
-/* PayPal fix — NE TÖRJÖN SORBA */
+/* EZ MEGAKADÁLYOZZA A SZÉTESÉST */
 #paypal-container-2FGRU9WXMWF8U {
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-/* EZ akadályozza meg az egymás alatti törést */
-#paypal-container-2FGRU9WXMWF8U * {
-    white-space: normal !important;
-    font-size: 14px !important;
 }
 
 /* COUNTER */
@@ -133,6 +143,9 @@ body::before {
 </head>
 
 <body>
+
+<!-- CURSOR -->
+<div class="cursor-dot"></div>
 
 <!-- BACKGROUND -->
 <video autoplay muted loop playsinline id="bg-video">
@@ -247,6 +260,8 @@ window.addEventListener("load", function () {
     }).render("#paypal-container-2FGRU9WXMWF8U");
 });
 </script>
+
+<script src="js/cursor.js?v=2"></script>
 
 </body>
 </html>
