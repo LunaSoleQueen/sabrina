@@ -24,6 +24,7 @@ body {
     background: transparent !important;
 }
 
+/* BACKGROUND VIDEO */
 #bg-video {
     position: fixed;
     top: 0;
@@ -43,7 +44,7 @@ body {
     margin-top: 50px;
 }
 
-/* BOXOK */
+/* BOX DESIGN (minden box ugyanaz) */
 .templatemo_home_top_left,
 .templatemo_home_midleft,
 .templatemo_home_midmid,
@@ -56,16 +57,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* STACK LEFT COLUMN */
-.left-column {
-    display: block;
-}
-
-/* STACK CENTER COLUMN */
-.center-column {
-    display: block;
-}
-
 /* 💜 DONATE BOX */
 .paypal-section {
     padding: 25px 20px;
@@ -74,11 +65,9 @@ body {
     border-radius: 16px;
     text-align: center;
     color: #fff;
-    width: 100%;
-    box-sizing: border-box;
+    margin-top: 15px;
 }
 
-/* DONATE TITLE */
 .paypal-title {
     font-size: 26px;
     font-weight: 600;
@@ -92,11 +81,11 @@ body {
     margin-bottom: 15px;
 }
 
-/* PayPal container */
+/* PayPal fix */
 #paypal-container-2FGRU9WXMWF8U {
-    width: 100% !important;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 /* COUNTER */
@@ -128,9 +117,10 @@ body {
 
 <body>
 
+<!-- CURSOR -->
 <div class="cursor-dot"></div>
 
-<!-- BACKGROUND -->
+<!-- BACKGROUND VIDEO -->
 <video autoplay muted loop playsinline id="bg-video">
     <source src="images/web_bg_kicsi.mp4" type="video/mp4">
 </video>
@@ -169,19 +159,20 @@ body {
     </div>
 </div>
 
-<!-- MAIN ROW -->
+<!-- MAIN GRID (FIXED) -->
 <div class="container">
     <div class="row">
 
-        <!-- LEFT COLUMN -->
-        <div class="col-md-4 left-column">
+        <!-- LEFT -->
+        <div class="col-md-4">
 
             <div class="templatemo_home_midleft">LEFT BOX</div>
 
-            <!-- 💜 DONATE UNDER LEFT -->
+            <!-- DONATE UNDER LEFT -->
             <div class="paypal-section">
                 <div class="paypal-title">DONATE</div>
                 <div class="paypal-subtitle">Support the project</div>
+
                 <div id="paypal-container-2FGRU9WXMWF8U"></div>
             </div>
 
@@ -200,7 +191,7 @@ body {
     </div>
 </div>
 
-<!-- PAYPAL SDK -->
+<!-- PAYPAL SCRIPT -->
 <script src="https://www.paypal.com/sdk/js?client-id=BAAEP5UkBLYS865bY3McFMLTe6Qw6QGPYZr34QpepJMoyToFFDRfYW9P0GLHBJ6rW5QiktDmcXkcn9PAJM&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
 
 <script>
@@ -209,6 +200,7 @@ paypal.HostedButtons({
 }).render("#paypal-container-2FGRU9WXMWF8U");
 </script>
 
+<!-- CURSOR JS -->
 <script src="js/cursor.js?v=2"></script>
 
 </body>
