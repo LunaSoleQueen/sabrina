@@ -2,7 +2,6 @@ html, body{
     cursor:none;
 }
 
-/* mobilon kikapcsol */
 @media (pointer: coarse){
     html, body{
         cursor:auto;
@@ -14,41 +13,34 @@ html, body{
     }
 }
 
-/* központi lila pont */
 .cursor-dot{
     position:fixed;
     width:10px;
     height:10px;
     border-radius:50%;
-
     background: radial-gradient(circle,
-        #d18cff 0%,
-        #8a2be2 50%,
+        #b56bff 0%,
+        #6a00ff 50%,
         transparent 80%
     );
 
     box-shadow:
-        0 0 10px #b56bff,
-        0 0 25px #8a2be2;
+        0 0 12px #b56bff,
+        0 0 30px #6a00ff;
 
+    transform:translate(-50%,-50%);
     pointer-events:none;
     z-index:999999;
-    transform:translate(-50%,-50%);
 }
 
-/* csillag szikrák */
 .sparkle{
     position:fixed;
-    width:10px;
-    height:10px;
-
-    pointer-events:none;
-    z-index:999998;
-
+    width:8px;
+    height:8px;
     background: radial-gradient(circle,
-        rgba(255,255,255,0.9) 0%,
-        rgba(180,120,255,0.6) 40%,
-        transparent 70%
+        rgba(255,255,255,0.9),
+        rgba(180,120,255,0.4),
+        transparent
     );
 
     clip-path: polygon(
@@ -64,6 +56,7 @@ html, body{
         39% 35%
     );
 
-    filter: blur(0.3px);
+    pointer-events:none;
+    z-index:999998;
     opacity:0.8;
 }
