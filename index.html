@@ -16,7 +16,6 @@ html, body {
     padding: 0;
     height: 100%;
     overflow-x: hidden;
-    cursor: none;
 }
 
 body {
@@ -113,54 +112,11 @@ body {
 .counter-box.online {
     border-color: #00ffcc;
 }
-
-/* ===== Luxury Cursor ===== */
-
-.cursor{
-    position:fixed;
-    width:42px;
-    height:42px;
-    border:1px solid rgba(212,175,55,.65);
-    border-radius:50%;
-    pointer-events:none;
-    z-index:99999;
-    transform:translate(-50%,-50%);
-    transition:
-        width .25s ease,
-        height .25s ease,
-        border-color .25s ease,
-        background .25s ease;
-}
-
-.cursor-dot{
-    position:fixed;
-    width:8px;
-    height:8px;
-    background:#D4AF37;
-    border-radius:50%;
-    pointer-events:none;
-    z-index:100000;
-    transform:translate(-50%,-50%);
-}
-
-@media (pointer: coarse){
-    .cursor,
-    .cursor-dot{
-        display:none;
-    }
-
-    body{
-        cursor:auto;
-    }
-}
 </style>
 
 </head>
 
 <body>
-
-<div class="cursor"></div>
-<div class="cursor-dot"></div>
 
 <video autoplay muted loop playsinline id="bg-video">
     <source src="images/web_bg_kicsi.mp4" type="video/mp4">
@@ -253,31 +209,6 @@ body {
     document.getElementById("online").innerText = 1;
 
 })();
-
-/* ===== Luxury Cursor ===== */
-
-const cursor = document.querySelector(".cursor");
-const dot = document.querySelector(".cursor-dot");
-
-window.addEventListener("mousemove",(e)=>{
-
-cursor.animate({
-left:e.clientX+"px",
-top:e.clientY+"px"
-},{
-duration:180,
-fill:"forwards"
-});
-
-dot.animate({
-left:e.clientX+"px",
-top:e.clientY+"px"
-},{
-duration:40,
-fill:"forwards"
-});
-
-});
 </script>
 
 </body>
