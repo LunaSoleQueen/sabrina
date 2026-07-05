@@ -8,7 +8,6 @@
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/templatemo_style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -19,20 +18,7 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
-}
-
-/* DEBUG BANNER (EZT KERESD AZ OLDALON) */
-#debug {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: red;
-  color: white;
-  z-index: 99999;
-  font-size: 22px;
-  text-align: center;
-  padding: 5px;
+  color: #fff;
 }
 
 /* BACKGROUND VIDEO */
@@ -43,18 +29,29 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -2;
+}
+
+/* DARK OVERLAY (EZ ADJA A CINEMATIC HATÁST) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.85)
+  );
   z-index: -1;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
-}
-
-/* NAVBAR CENTER + GOLD */
+/* NAVBAR */
 .navbar-nav {
   width: 100%;
   text-align: center;
+  margin-top: 20px;
 }
 
 .navbar-nav > li {
@@ -66,35 +63,68 @@ html, body {
   color: #d4af37 !important;
   font-weight: 600;
   letter-spacing: 2px;
+  transition: 0.3s;
 }
 
 .navbar-nav > li > a:hover {
-  color: #fff !important;
+  color: #ffffff !important;
 }
 
-/* ABOUT BOX */
-.about-box {
-  background: rgba(130, 70, 200, 0.5);
-  border: 2px solid #ff66cc;
-  border-radius: 16px;
-  padding: 40px;
-  margin-top: 60px;
-  color: #fff;
+/* CENTER CONTAINER */
+.center-wrap {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* GLASS CARD */
+.glass-card {
+  max-width: 900px;
+  width: 100%;
+  padding: 60px 40px;
   text-align: center;
-  backdrop-filter: blur(6px);
+
+  background: rgba(130, 70, 200, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+
+  animation: fadeIn 1.2s ease forwards;
+  opacity: 0;
 }
 
-.about-box h1 {
-  font-size: 36px;
-  letter-spacing: 3px;
+/* TITLE */
+.glass-card h1 {
+  font-size: 42px;
+  letter-spacing: 4px;
   margin-bottom: 20px;
+  color: #d4af37;
 }
 
-.about-box p {
+/* TEXT */
+.glass-card p {
   font-size: 16px;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
+  line-height: 1.9;
+  font-weight: 300;
+  color: #f5f5f5;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
 
@@ -102,15 +132,12 @@ html, body {
 
 <body>
 
-<!-- 🔴 DEBUG LINE -->
-<div id="debug">
-  HA EZT LÁTOD → EZ AZ AKTUÁLIS ABOUT.HTML FUT
-</div>
-
 <!-- BACKGROUND -->
 <video autoplay muted loop playsinline id="bg-video">
   <source src="images/web_bg_kicsi.mp4" type="video/mp4">
 </video>
+
+<div class="overlay"></div>
 
 <!-- MENU -->
 <div class="container menu">
@@ -127,23 +154,17 @@ html, body {
 </div>
 
 <!-- CONTENT -->
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
+<div class="center-wrap">
+  <div class="glass-card">
 
-      <div class="about-box">
+    <h1>WELCOME TO MY KINGDOM</h1>
 
-        <h1>WELCOME TO MY KINGDOM</h1>
+    <p>
+      Step inside and explore freely.<br><br>
+      Here, refined sensuality meets luxury aesthetics, creating a world of soft intensity and elegance.<br><br>
+      Let yourself drift into the atmosphere… and become part of it.
+    </p>
 
-        <p>
-          Step inside and explore freely.<br><br>
-          Here, refined sensuality meets luxury aesthetics.<br><br>
-          Let yourself be immersed… and become part of it.
-        </p>
-
-      </div>
-
-    </div>
   </div>
 </div>
 
