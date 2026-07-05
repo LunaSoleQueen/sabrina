@@ -1,0 +1,82 @@
+/* =========================
+   LUXURY GLOBAL STYLE LAYER
+   ========================= */
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND VIDEO SOFT ZOOM */
+#bg-video {
+  transform: scale(1.05);
+  animation: bgZoom 25s ease-in-out infinite alternate;
+}
+
+@keyframes bgZoom {
+  from { transform: scale(1.05); }
+  to { transform: scale(1.15); }
+}
+
+/* DARK CINEMATIC OVERLAY */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.85)
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* GLOBAL LUXURY CARD */
+.lux-card {
+  background: rgba(130, 70, 200, 0.18);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 35px rgba(212,175,55,0.12);
+  transition: 0.4s ease;
+}
+
+.lux-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 0 55px rgba(212,175,55,0.22);
+}
+
+/* GOLD NAV */
+.navbar-nav > li > a {
+  color: #d4af37 !important;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.navbar-nav > li > a:hover {
+  color: #fff !important;
+  text-shadow: 0 0 10px rgba(212,175,55,0.6);
+}
+
+/* FLOAT ANIMATION */
+.float-in {
+  animation: floatIn 1.2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* GLOW TEXT */
+.glow-text {
+  color: #d4af37;
+  text-shadow: 0 0 10px rgba(212,175,55,0.3);
+}
