@@ -44,10 +44,6 @@ body {
     margin-top: 50px;
 }
 
-.navbar-nav {
-    width: 100%;
-}
-
 /* BOXOK */
 .templatemo_home_top_left,
 .templatemo_home_midleft,
@@ -60,31 +56,15 @@ body {
     padding: 20px;
 }
 
-/* FLEX ROW */
-.row-flex {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-}
-
-.row-flex > div {
-    display: flex;
-}
-
-.row-flex > div > div {
-    width: 100%;
-}
-
-/* 💜 PAYPAL SECTION (FIXED + MATCH DESIGN) */
+/* 💜 PAYPAL - CENTER WIDTH MATCH */
 .paypal-section {
-    margin-top: 25px;
+    margin-top: 15px;
     padding: 20px;
-    background: rgba(130,70,200,.45); /* same as boxes */
+    background: rgba(130,70,200,.45);
     border: 2px solid #ff66cc;
     border-radius: 16px;
     color: #fff;
     text-align: center;
-
     width: 100%;
     overflow: hidden;
 }
@@ -96,12 +76,21 @@ body {
 
 #paypal-container-2FGRU9WXMWF8U {
     width: 100% !important;
-    min-width: 320px;
+    min-width: 0 !important;
 }
 
-/* PayPal iframe safety */
-.paypal-section iframe {
-    max-width: 100% !important;
+/* GRID FLEX FIX */
+.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-flex > div {
+    display: flex;
+}
+
+.row-flex > div > div {
+    width: 100%;
 }
 
 /* COUNTER */
@@ -175,7 +164,7 @@ body {
     </div>
 </div>
 
-<!-- MID BOXES -->
+<!-- MID + PAYPAL SAME COLUMN SYSTEM -->
 <div class="container">
     <div class="row row-flex">
 
@@ -183,29 +172,23 @@ body {
             <div class="templatemo_home_midleft">LEFT BOX</div>
         </div>
 
-        <div class="col-md-4">
+        <!-- CENTER COLUMN -->
+        <div class="col-md-4" style="display:flex; flex-direction:column; gap:15px;">
+
             <div class="templatemo_home_midmid">CENTER BOX</div>
+
+            <!-- 💜 PAYPAL UNDER CENTER -->
+            <div class="paypal-section">
+                <div class="paypal-title">💜 Support the project</div>
+                <div id="paypal-container-2FGRU9WXMWF8U"></div>
+            </div>
+
         </div>
 
         <div class="col-md-4">
             <div class="templatemo_home_midright">RIGHT BOX</div>
         </div>
 
-    </div>
-</div>
-
-<!-- 💜 PAYPAL (CENTER ALÁ) -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-
-            <div class="paypal-section">
-                <div class="paypal-title">💜 Support the project</div>
-
-                <div id="paypal-container-2FGRU9WXMWF8U"></div>
-            </div>
-
-        </div>
     </div>
 </div>
 
@@ -228,40 +211,7 @@ paypal.HostedButtons({
 }).render("#paypal-container-2FGRU9WXMWF8U");
 </script>
 
-<!-- COUNTER SCRIPT -->
-<script>
-(function(){
-
-    let today = localStorage.getItem("today") || 0;
-    let yesterday = localStorage.getItem("yesterday") || 0;
-    let all = localStorage.getItem("all") || 0;
-
-    const lastVisit = localStorage.getItem("lastVisit");
-    const now = new Date().toDateString();
-
-    if(lastVisit !== now){
-        yesterday = today;
-        today = 0;
-    }
-
-    today = parseInt(today) + 1;
-    all = parseInt(all) + 1;
-
-    localStorage.setItem("today", today);
-    localStorage.setItem("yesterday", yesterday);
-    localStorage.setItem("all", all);
-    localStorage.setItem("lastVisit", now);
-
-    document.getElementById("today").innerText = today;
-    document.getElementById("yesterday").innerText = yesterday;
-    document.getElementById("all").innerText = all;
-
-    document.getElementById("online").innerText = 1;
-
-})();
-</script>
-
-<!-- CURSOR JS -->
+<!-- CURSOR -->
 <script src="js/cursor.js?v=2"></script>
 
 </body>
