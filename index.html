@@ -44,14 +44,16 @@ body {
 }
 
 /* BOX STÍLUS */
-.box-style {
+.templatemo_home_top_left,
+.templatemo_home_midleft,
+.templatemo_home_midmid,
+.templatemo_home_midright {
     background: rgba(130,70,200,.45);
     border: 2px solid #ff66cc;
     border-radius: 16px;
     color: #fff;
     padding: 20px;
     margin-bottom: 15px;
-    backdrop-filter: blur(5px);
 }
 
 /* HERO */
@@ -62,36 +64,35 @@ body {
     border-radius: 16px;
 }
 
-/* DONATE FULL WIDTH */
+/* PAYPAL BOX (EREDETI) */
 .paypal-section {
+    padding: 25px 20px;
     background: rgba(130,70,200,.45);
     border: 2px solid #ff66cc;
     border-radius: 16px;
-    padding: 25px;
     text-align: center;
     color: #fff;
-    backdrop-filter: blur(5px);
+    margin-top: 15px;
 }
 
 .paypal-title {
     font-size: 24px;
     letter-spacing: 4px;
     font-weight: 600;
-    white-space: nowrap;
+    margin-bottom: 5px;
 }
 
 .paypal-subtitle {
     font-size: 13px;
     opacity: 0.9;
     margin-bottom: 15px;
-    white-space: nowrap;
 }
 
-/* PayPal center */
+/* PayPal container */
 #paypal-container-2FGRU9WXMWF8U {
+    width: 100%;
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 /* COUNTER */
@@ -123,7 +124,7 @@ body {
 
 <body>
 
-<!-- BACKGROUND -->
+<!-- BACKGROUND VIDEO -->
 <video autoplay muted loop playsinline id="bg-video">
     <source src="images/web_bg_kicsi.mp4" type="video/mp4">
 </video>
@@ -151,7 +152,7 @@ body {
     <div class="row">
 
         <div class="col-md-8">
-            <div class="box-style">
+            <div class="templatemo_home_top_left">
                 <h1>WELCOME</h1>
                 <p>Full screen video background site.</p>
             </div>
@@ -164,28 +165,16 @@ body {
     </div>
 </div>
 
-<!-- MAIN BOXES -->
+<!-- MAIN GRID -->
 <div class="container">
     <div class="row">
 
+        <!-- LEFT -->
         <div class="col-md-4">
-            <div class="box-style">LEFT BOX</div>
-        </div>
 
-        <div class="col-md-4">
-            <div class="box-style">CENTER BOX</div>
-        </div>
+            <div class="templatemo_home_midleft">LEFT BOX</div>
 
-        <div class="col-md-4">
-            <div class="box-style">RIGHT BOX</div>
-        </div>
-
-    </div>
-
-    <!-- DONATE FULL WIDTH (3 COL SPAN) -->
-    <div class="row">
-        <div class="col-md-12">
-
+            <!-- PAYPAL (EREDETI HELYEN) -->
             <div class="paypal-section">
 
                 <div class="paypal-title">DONATE</div>
@@ -196,10 +185,21 @@ body {
             </div>
 
         </div>
+
+        <!-- CENTER -->
+        <div class="col-md-4">
+            <div class="templatemo_home_midmid">CENTER BOX</div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="col-md-4">
+            <div class="templatemo_home_midright">RIGHT BOX</div>
+        </div>
+
     </div>
 </div>
 
-<!-- PAYPAL -->
+<!-- PAYPAL SCRIPT -->
 <script src="https://www.paypal.com/sdk/js?client-id=BAAEP5UkBLYS865bY3McFMLTe6Qw6QGPYZr34QpepJMoyToFFDRfYW9P0GLHBJ6rW5QiktDmcXkcn9PAJM&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
 
 <script>
