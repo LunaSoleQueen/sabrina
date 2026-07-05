@@ -22,7 +22,7 @@ body {
     background: transparent !important;
 }
 
-/* BACKGROUND VIDEO */
+/* BACKGROUND */
 #bg-video {
     position: fixed;
     top: 0;
@@ -42,7 +42,7 @@ body {
     margin-top: 50px;
 }
 
-/* BOXOK (EREDETI MÉRETEK) */
+/* BOXOK EREDETI MÉRETTEL */
 .templatemo_home_top_left {
     background: rgba(130,70,200,.45) !important;
     border: 2px solid #ff66cc !important;
@@ -73,7 +73,7 @@ body {
     display: block;
 }
 
-/* PAYPAL */
+/* PAYPAL FIXED CONTAINER */
 .paypal-section {
     background: rgba(130,70,200,.45);
     border: 2px solid #ff66cc;
@@ -82,26 +82,19 @@ body {
     text-align: center;
     color: #fff;
     margin-top: 15px;
+    overflow: hidden;
 }
 
-.paypal-title {
-    font-size: 22px;
-    letter-spacing: 4px;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.paypal-subtitle {
-    font-size: 13px;
-    opacity: 0.9;
-    margin-bottom: 10px;
-    white-space: nowrap;
-}
-
+/* PayPal ne törje a layoutot */
 #paypal-container-2FGRU9WXMWF8U {
     width: 100%;
-    display: flex;
-    justify-content: center;
+    display: block;
+    text-align: center;
+}
+
+/* PayPal belső elemek fix */
+#paypal-container-2FGRU9WXMWF8U * {
+    white-space: nowrap !important;
 }
 
 /* COUNTER */
@@ -183,8 +176,6 @@ body {
             <div class="templatemo_home_midleft">LEFT BOX</div>
 
             <div class="paypal-section">
-                <div class="paypal-title">DONATE</div>
-                <div class="paypal-subtitle">Support the project</div>
                 <div id="paypal-container-2FGRU9WXMWF8U"></div>
             </div>
 
@@ -209,7 +200,6 @@ body {
     <div class="counter-box online">Online: <span id="online"></span></div>
 </div>
 
-<!-- COUNTER JS -->
 <script>
 (function(){
 
