@@ -108,11 +108,16 @@ body::before {
     overflow: hidden;
 }
 
-/* EZ MEGAKADÁLYOZZA A SZÉTESÉST */
 #paypal-container-2FGRU9WXMWF8U {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+/* PayPal iframe védelme */
+#paypal-container-2FGRU9WXMWF8U iframe {
+    max-width: 100% !important;
 }
 
 /* COUNTER */
