@@ -56,7 +56,13 @@ body {
     padding: 20px;
 }
 
-/* 💜 PAYPAL - CENTER WIDTH MATCH */
+/* FLEX ROW */
+.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* PAYPAL BOX (CENTER WIDTH MATCH) */
 .paypal-section {
     margin-top: 15px;
     padding: 20px;
@@ -65,8 +71,9 @@ body {
     border-radius: 16px;
     color: #fff;
     text-align: center;
+
     width: 100%;
-    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .paypal-title {
@@ -74,23 +81,12 @@ body {
     margin-bottom: 15px;
 }
 
+/* CRITICAL: PayPal container fix */
 #paypal-container-2FGRU9WXMWF8U {
     width: 100% !important;
     min-width: 0 !important;
-}
-
-/* GRID FLEX FIX */
-.row-flex {
     display: flex;
-    flex-wrap: wrap;
-}
-
-.row-flex > div {
-    display: flex;
-}
-
-.row-flex > div > div {
-    width: 100%;
+    justify-content: center;
 }
 
 /* COUNTER */
@@ -164,7 +160,7 @@ body {
     </div>
 </div>
 
-<!-- MID + PAYPAL SAME COLUMN SYSTEM -->
+<!-- MID BOXES -->
 <div class="container">
     <div class="row row-flex">
 
@@ -172,14 +168,13 @@ body {
             <div class="templatemo_home_midleft">LEFT BOX</div>
         </div>
 
-        <!-- CENTER COLUMN -->
-        <div class="col-md-4" style="display:flex; flex-direction:column; gap:15px;">
-
+        <div class="col-md-4">
             <div class="templatemo_home_midmid">CENTER BOX</div>
 
-            <!-- 💜 PAYPAL UNDER CENTER -->
+            <!-- 💜 PAYPAL UNDER CENTER (SAFE VERSION) -->
             <div class="paypal-section">
                 <div class="paypal-title">💜 Support the project</div>
+
                 <div id="paypal-container-2FGRU9WXMWF8U"></div>
             </div>
 
