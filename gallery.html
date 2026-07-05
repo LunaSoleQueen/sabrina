@@ -8,38 +8,42 @@
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/templatemo_style.css">
 <link rel="stylesheet" href="css/cursor.css?v=2">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
   cursor: none !important;
-}
-
-body {
-  background: transparent !important;
 }
 
 /* BACKGROUND */
 #bg-video {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -2;
+}
+
+/* DARK OVERLAY */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.88)
+  );
   z-index: -1;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
-}
-
-/* NAVBAR CENTER + GOLD */
+/* NAVBAR */
 .navbar-nav {
   width: 100%;
   text-align: center;
@@ -56,61 +60,84 @@ body {
   letter-spacing: 2px;
 }
 
-/* GALLERY GRID FIX */
-.gallery-row {
-  margin-top: 20px;
+.navbar-nav > li > a:hover {
+  color: #fff !important;
 }
 
+/* GRID WRAPPER */
+.gallery-wrap {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+/* CARD */
 .gallery-box {
-  background: rgba(130, 70, 200, 0.5);
+  background: rgba(130, 70, 200, 0.14);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 16px;
   padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  transition: 0.3s;
+  margin-bottom: 25px;
+
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
 }
 
 .gallery-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(212,175,55,0.15);
+}
+
+/* IMAGE */
+.gallery-img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gallery-img:hover {
   transform: scale(1.02);
 }
 
-.gallery-img {
-  width: 100%;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* LIGHTBOX FIXED (NO OVER-ZOOM) */
+/* LIGHTBOX */
 #lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
   display: none;
   align-items: center;
   justify-content: center;
+
+  background: rgba(0,0,0,0.92);
   z-index: 9999;
-  padding: 60px; /* EZ A LÉNYEG: ne érjen a szélekhez */
+  padding: 80px; /* NEM ÉR KI A SZÉLÉIG */
   box-sizing: border-box;
 }
 
+/* IMAGE INSIDE */
 #lightbox img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* EZ MEGAKADÁLYOZZA A BRUTÁL ZOOMOT */
-  border-radius: 10px;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
 }
 
-/* CLOSE BUTTON */
+/* CLOSE */
 #close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 25px;
+  right: 25px;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  border: none;
   background: #d4af37;
   color: #000;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
   font-weight: bold;
+
   cursor: pointer;
 }
 </style>
@@ -121,6 +148,7 @@ body {
 
 <div class="cursor-dot"></div>
 
+<!-- BACKGROUND -->
 <video autoplay muted loop playsinline id="bg-video">
   <source src="images/web_bg_kicsi.mp4" type="video/mp4">
 </video>
@@ -140,8 +168,8 @@ body {
 </div>
 
 <!-- GALLERY -->
-<div class="container">
-  <div class="row gallery-row">
+<div class="gallery-wrap">
+  <div class="row">
 
     <div class="col-sm-4">
       <div class="gallery-box">
@@ -208,19 +236,16 @@ body {
 
 <script>
 function openLightbox(el){
-  document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = el.src;
+  const lb = document.getElementById("lightbox");
+  const img = document.getElementById("lightbox-img");
+
+  lb.style.display = "flex";
+  img.src = el.src;
 }
 
 function closeLightbox(){
   document.getElementById("lightbox").style.display = "none";
 }
-
-document.getElementById("lightbox").addEventListener("click", function(e){
-  if(e.target.id === "lightbox"){
-    closeLightbox();
-  }
-});
 
 document.addEventListener("keydown", function(e){
   if(e.key === "Escape"){
