@@ -10,21 +10,25 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/templatemo_style.css">
 
-<link rel="stylesheet" href="css/cursor.css?v=2">
-
 <style>
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow-x: hidden;
-    cursor: none !important;
+}
+
+/* 🚨 FONT FIX: megakadályozza a betű szétesést */
+body, h1, h2, h3, p, a, li, span {
+    word-break: normal !important;
+    overflow-wrap: normal !important;
 }
 
 body {
     background: transparent !important;
 }
 
+/* BACKGROUND VIDEO */
 #bg-video {
     position: fixed;
     top: 0;
@@ -40,11 +44,12 @@ body {
     z-index: 1;
 }
 
+/* MENU */
 .menu {
     margin-top: 50px;
 }
 
-/* BOXOK */
+/* BOX STYLE (EGYSÉGES) */
 .templatemo_home_top_left,
 .templatemo_home_midleft,
 .templatemo_home_midmid,
@@ -54,39 +59,16 @@ body {
     border-radius: 16px;
     color: #fff;
     padding: 20px;
-}
-
-/* FLEX ROW */
-.row-flex {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-/* PAYPAL BOX (CENTER WIDTH MATCH) */
-.paypal-section {
-    margin-top: 15px;
-    padding: 20px;
-    background: rgba(130,70,200,.45);
-    border: 2px solid #ff66cc;
-    border-radius: 16px;
-    color: #fff;
-    text-align: center;
-
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.paypal-title {
-    font-size: 18px;
     margin-bottom: 15px;
 }
 
-/* CRITICAL: PayPal container fix */
-#paypal-container-2FGRU9WXMWF8U {
-    width: 100% !important;
-    min-width: 0 !important;
-    display: flex;
-    justify-content: center;
+/* HERO IMAGE */
+.hero-img {
+    width: 100%;
+    height: 533px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
 }
 
 /* COUNTER */
@@ -118,9 +100,6 @@ body {
 
 <body>
 
-<!-- CURSOR -->
-<div class="cursor-dot"></div>
-
 <!-- BACKGROUND -->
 <video autoplay muted loop playsinline id="bg-video">
     <source src="images/web_bg_kicsi.mp4" type="video/mp4">
@@ -147,6 +126,7 @@ body {
 <!-- HERO -->
 <div class="container">
     <div class="row">
+
         <div class="col-md-8">
             <div class="templatemo_home_top_left">
                 <h1>WELCOME</h1>
@@ -157,12 +137,13 @@ body {
         <div class="col-md-4">
             <img class="hero-img" src="images/P1100190_home01m.jpg">
         </div>
+
     </div>
 </div>
 
-<!-- MID BOXES -->
+<!-- MAIN GRID (FIXED - NO FLEX) -->
 <div class="container">
-    <div class="row row-flex">
+    <div class="row">
 
         <div class="col-md-4">
             <div class="templatemo_home_midleft">LEFT BOX</div>
@@ -170,14 +151,6 @@ body {
 
         <div class="col-md-4">
             <div class="templatemo_home_midmid">CENTER BOX</div>
-
-            <!-- 💜 PAYPAL UNDER CENTER (SAFE VERSION) -->
-            <div class="paypal-section">
-                <div class="paypal-title">💜 Support the project</div>
-
-                <div id="paypal-container-2FGRU9WXMWF8U"></div>
-            </div>
-
         </div>
 
         <div class="col-md-4">
@@ -189,25 +162,41 @@ body {
 
 <!-- COUNTER -->
 <div class="site-counter">
-    <div class="counter-box">Today: <span id="today"></span></div>
-    <div class="counter-box">Yesterday: <span id="yesterday"></span></div>
-    <div class="counter-box">All: <span id="all"></span></div>
-    <div class="counter-box online">Online: <span id="online"></span></div>
+    <div class="counter-box">Today: <span id="today">0</span></div>
+    <div class="counter-box">Yesterday: <span id="yesterday">0</span></div>
+    <div class="counter-box">All: <span id="all">0</span></div>
+    <div class="counter-box online">Online: <span id="online">1</span></div>
 </div>
 
-<!-- PAYPAL SDK -->
-<script 
-  src="https://www.paypal.com/sdk/js?client-id=BAAEP5UkBLYS865bY3McFMLTe6Qw6QGPYZr34QpepJMoyToFFDRfYW9P0GLHBJ6rW5QiktDmcXkcn9PAJM&components=hosted-buttons&disable-funding=venmo&currency=USD">
-</script>
-
 <script>
-paypal.HostedButtons({
-  hostedButtonId: "2FGRU9WXMWF8U",
-}).render("#paypal-container-2FGRU9WXMWF8U");
-</script>
+(function(){
 
-<!-- CURSOR -->
-<script src="js/cursor.js?v=2"></script>
+    let today = localStorage.getItem("today") || 0;
+    let yesterday = localStorage.getItem("yesterday") || 0;
+    let all = localStorage.getItem("all") || 0;
+
+    const lastVisit = localStorage.getItem("lastVisit");
+    const now = new Date().toDateString();
+
+    if(lastVisit !== now){
+        yesterday = today;
+        today = 0;
+    }
+
+    today = parseInt(today) + 1;
+    all = parseInt(all) + 1;
+
+    localStorage.setItem("today", today);
+    localStorage.setItem("yesterday", yesterday);
+    localStorage.setItem("all", all);
+    localStorage.setItem("lastVisit", now);
+
+    document.getElementById("today").innerText = today;
+    document.getElementById("yesterday").innerText = yesterday;
+    document.getElementById("all").innerText = all;
+
+})();
+</script>
 
 </body>
 </html>
