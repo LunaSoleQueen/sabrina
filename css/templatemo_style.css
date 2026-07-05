@@ -1,210 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Home</title>
+/* ==============================
+   🔥 LAYOUT STABILIZÁLÁS FIX
+   ============================== */
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/templatemo_style.css">
-
-<style>
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    background: transparent !important;
-}
-
-#bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-.container {
-    position: relative;
-    z-index: 1;
-}
-
-.row-flex {
+/* NE ENGEDD, HOGY FLEX ELROMOLJON A BOOTSTRAP GRID */
+.row {
     display: flex;
     flex-wrap: wrap;
 }
 
-.row-flex > div {
-    display: flex;
+.col-md-4, .col-md-8, .col-sm-4, .col-sm-8 {
+    display: block !important;
 }
 
-.row-flex > div > div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
+/* TOP BOX FIX MAGASSÁG */
 .templatemo_home_top_left {
-    background: rgba(130,70,200,.45) !important;
-    border: 2px solid #ff66cc !important;
-    border-radius: 16px;
-    color: #fff !important;
-    padding: 20px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     height: 500px !important;
     min-height: 500px !important;
+    max-height: 500px !important;
 }
 
+/* ALSÓ BOXOK FIX MAGASSÁG */
 .templatemo_home_midleft,
 .templatemo_home_midmid,
 .templatemo_home_midright {
-    background: rgba(130,70,200,.45) !important;
-    border: 2px solid #ff66cc !important;
-    border-radius: 16px;
-    color: #fff !important;
-    padding: 20px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    min-height: 140px;
+    height: 140px !important;
+    min-height: 140px !important;
 }
 
-.hero-img {
+/* PAYPAL NE KÖZÉPRE “UGORJON” FLEX MIATT */
+.paypal-section {
+    display: block !important;
+    text-align: center;
     width: 100%;
-    height: 533px;
-    object-fit: cover;
-    border-radius: 16px;
-    display: block;
 }
 
-.site-counter {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 9999;
+/* PAYPAL GOMB NE TORZULJON */
+#paypal-container-2FGRU9WXMWF8U {
+    display: block !important;
+    width: 100%;
 }
 
-.counter-box {
-    background: rgba(130,70,200,.55);
-    border: 2px solid #ff66cc;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 12px;
-    font-size: 13px;
-    backdrop-filter: blur(5px);
+/* SZÖVEG NE TÖRJÖN SZÉT */
+.paypal-title,
+.paypal-subtitle {
+    white-space: nowrap;
 }
-.counter-box.online {
-    border-color: #00ffcc;
-}
-</style>
-
-</head>
-
-<body>
-
-<video autoplay muted loop playsinline id="bg-video">
-    <source src="images/web_bg_kicsi.mp4" type="video/mp4">
-</video>
-
-<div class="container menu">
-    <div class="row">
-        <div class="col-sm-4">
-            <img src="images/logo lsq vége.png" style="max-width:180px;">
-        </div>
-
-        <div class="col-sm-8">
-            <ul class="nav navbar-nav">
-                <li class="current"><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="gallery.html">GALLERY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="templatemo_home_top_left">
-                <h1>WELCOME</h1>
-                <p>Full screen video background site.</p>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <img class="hero-img" src="images/P1100190_home01m.jpg">
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row row-flex">
-
-        <div class="col-md-4">
-            <div class="templatemo_home_midleft">LEFT BOX</div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="templatemo_home_midmid">CENTER BOX</div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="templatemo_home_midright">RIGHT BOX</div>
-        </div>
-
-    </div>
-</div>
-
-<div class="site-counter">
-    <div class="counter-box">Today: <span id="today">0</span></div>
-    <div class="counter-box">Yesterday: <span id="yesterday">0</span></div>
-    <div class="counter-box">All: <span id="all">0</span></div>
-    <div class="counter-box online">Online: <span id="online">1</span></div>
-</div>
-
-<script>
-(function(){
-
-    let today = localStorage.getItem("today") || 0;
-    let yesterday = localStorage.getItem("yesterday") || 0;
-    let all = localStorage.getItem("all") || 0;
-
-    const lastVisit = localStorage.getItem("lastVisit");
-    const now = new Date().toDateString();
-
-    if(lastVisit !== now){
-        yesterday = today;
-        today = 0;
-    }
-
-    today = parseInt(today) + 1;
-    all = parseInt(all) + 1;
-
-    localStorage.setItem("today", today);
-    localStorage.setItem("yesterday", yesterday);
-    localStorage.setItem("all", all);
-    localStorage.setItem("lastVisit", now);
-
-    document.getElementById("today").innerText = today;
-    document.getElementById("yesterday").innerText = yesterday;
-    document.getElementById("all").innerText = all;
-
-    document.getElementById("online").innerText = 1;
-
-})();
-</script>
-
-</body>
-</html>
