@@ -9,20 +9,20 @@ if (!dot) {
         dot.style.left = e.clientX + "px";
         dot.style.top = e.clientY + "px";
 
-        createSparkle(e.clientX, e.clientY);
+        spawnSparkle(e.clientX, e.clientY);
 
     });
 
 }
 
-function createSparkle(x, y){
+function spawnSparkle(x, y){
 
-    if(Math.random() > 0.35) return;
+    if (Math.random() > 0.4) return;
 
     const s = document.createElement("div");
     s.className = "sparkle";
 
-    const size = 6 + Math.random()*8;
+    const size = 5 + Math.random() * 8;
 
     s.style.width = size + "px";
     s.style.height = size + "px";
@@ -33,11 +33,11 @@ function createSparkle(x, y){
     document.body.appendChild(s);
 
     let opacity = 1;
-    let dx = (Math.random()-0.5)*2;
-    let dy = (Math.random()-0.5)*2;
+    let dx = (Math.random() - 0.5) * 2;
+    let dy = (Math.random() - 0.5) * 2;
     let scale = 1;
 
-    function animate(){
+    function animate() {
         opacity -= 0.03;
         scale += 0.02;
 
@@ -49,7 +49,7 @@ function createSparkle(x, y){
         s.style.opacity = opacity;
         s.style.transform = `scale(${scale})`;
 
-        if(opacity <= 0){
+        if (opacity <= 0) {
             s.remove();
             return;
         }
