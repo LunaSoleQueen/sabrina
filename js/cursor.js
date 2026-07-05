@@ -1,130 +1,60 @@
-// =====================================================
-// Luxury Smoke Cursor
-// =====================================================
+const dot = document.querySelector(".cursor-dot");
 
-const cursor = document.querySelector(".luxury-cursor");
-const dot = document.querySelector(".luxury-cursor-dot");
+let mouseX = 0;
+let mouseY = 0;
 
-if (cursor && dot && window.matchMedia("(pointer:fine)").matches) {
+window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
+    dot.style.left = mouseX + "px";
+    dot.style.top = mouseY + "px";
 
-    let cursorX = mouseX;
-    let cursorY = mouseY;
+    createSparkle(mouseX, mouseY);
+});
 
-    let dotX = mouseX;
-    let dotY = mouseY;
+/* csillag por */
+function createSparkle(x, y){
 
-    // Finom követés
-    function animateCursor() {
+    if(Math.random() > 0.35) return;
 
-        cursorX += (mouseX - cursorX) * 0.18;
-        cursorY += (mouseY - cursorY) * 0.18;
+    const s = document.createElement("div");
+    s.className = "sparkle";
 
-        dotX += (mouseX - dotX) * 0.45;
-        dotY += (mouseY - dotY) * 0.45;
+    const size = 6 + Math.random()*10;
 
-        cursor.style.left = cursorX + "px";
-        cursor.style.top = cursorY + "px";
+    s.style.width = size + "px";
+    s.style.height = size + "px";
 
-        dot.style.left = dotX + "px";
-        dot.style.top = dotY + "px";
+    s.style.left = x + "px";
+    s.style.top = y + "px";
 
-        requestAnimationFrame(animateCursor);
-    }
+    document.body.appendChild(s);
 
-    animateCursor();
-
-    window.addEventListener("mousemove", e => {
-
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        createSmoke(e.clientX, e.clientY);
-
-    });
-
-    // Hover effekt
-    document.querySelectorAll("a,button,.btn").forEach(el => {
-
-        el.addEventListener("mouseenter", () => {
-            cursor.classList.add("hover");
-        });
-
-        el.addEventListener("mouseleave", () => {
-            cursor.classList.remove("hover");
-        });
-
-    });
-
-    // Kattintás
-    window.addEventListener("mousedown", () => {
-        cursor.classList.add("click");
-    });
-
-    window.addEventListener("mouseup", () => {
-        cursor.classList.remove("click");
-    });
-
-}
-
-// =====================================================
-// Smoke Trail
-// =====================================================
-
-function createSmoke(x, y) {
-
-    if (Math.random() > 0.45) return;
-
-    const smoke = document.createElement("div");
-    smoke.className = "smoke-particle";
-
-    const size = 12 + Math.random() * 18;
-
-    smoke.style.width = size + "px";
-    smoke.style.height = size + "px";
-
-    smoke.style.left = (x - size / 2) + "px";
-    smoke.style.top = (y - size / 2) + "px";
-
-    const hue = 35 + Math.random() * 25;
-
-    smoke.style.boxShadow =
-        `0 0 ${20 + Math.random()*25}px hsla(${hue},100%,75%,0.45)`;
-
-    document.body.appendChild(smoke);
-
-    let opacity = 0.6;
+    let opacity = 1;
+    let dx = (Math.random()-0.5)*2;
+    let dy = (Math.random()-0.5)*2;
     let scale = 1;
-    let dx = (Math.random() - 0.5) * 1.5;
-    let dy = -0.5 - Math.random();
 
-    function animate() {
-
-        opacity -= 0.018;
-        scale += 0.018;
+    function animate(){
+        opacity -= 0.02;
+        scale += 0.02;
 
         x += dx;
         y += dy;
 
-        smoke.style.left = x + "px";
-        smoke.style.top = y + "px";
+        s.style.left = x + "px";
+        s.style.top = y + "px";
+        s.style.opacity = opacity;
+        s.style.transform = `scale(${scale})`;
 
-        smoke.style.opacity = opacity;
-        smoke.style.transform = `scale(${scale})`;
-
-        if (opacity <= 0) {
-
-            smoke.remove();
+        if(opacity <= 0){
+            s.remove();
             return;
-
         }
 
         requestAnimationFrame(animate);
-
     }
 
     requestAnimationFrame(animate);
-
 }
