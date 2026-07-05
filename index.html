@@ -22,7 +22,7 @@ body {
     background: transparent !important;
 }
 
-/* BACKGROUND */
+/* BACKGROUND VIDEO */
 #bg-video {
     position: fixed;
     top: 0;
@@ -42,7 +42,7 @@ body {
     margin-top: 50px;
 }
 
-/* 🔥 EREDETI BOX MÉRETEK VISSZA */
+/* BOXOK (EREDETI MÉRETEK) */
 .templatemo_home_top_left {
     background: rgba(130,70,200,.45) !important;
     border: 2px solid #ff66cc !important;
@@ -51,10 +51,8 @@ body {
     padding: 20px;
     height: 500px !important;
     min-height: 500px !important;
-    max-height: 500px !important;
 }
 
-/* LOWER BOXOK EREDETI MAGASSÁG */
 .templatemo_home_midleft,
 .templatemo_home_midmid,
 .templatemo_home_midright {
@@ -64,7 +62,6 @@ body {
     color: #fff !important;
     padding: 20px;
     min-height: 140px !important;
-    height: 140px !important;
 }
 
 /* HERO */
@@ -76,38 +73,35 @@ body {
     display: block;
 }
 
-/* PAYPAL FIX (NE MOZOGJON KÖZÉPRE RANDOM) */
+/* PAYPAL */
 .paypal-section {
     background: rgba(130,70,200,.45);
     border: 2px solid #ff66cc;
     border-radius: 16px;
-    padding: 25px 20px;
-    margin-top: 15px;
+    padding: 20px;
     text-align: center;
     color: #fff;
+    margin-top: 15px;
 }
 
-/* cím NEM törhet */
 .paypal-title {
-    font-size: 24px;
+    font-size: 22px;
     letter-spacing: 4px;
     font-weight: 600;
     white-space: nowrap;
 }
 
-/* subtitle NEM törhet */
 .paypal-subtitle {
     font-size: 13px;
     opacity: 0.9;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     white-space: nowrap;
 }
 
-/* PayPal container fix */
 #paypal-container-2FGRU9WXMWF8U {
     width: 100%;
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* COUNTER */
@@ -185,6 +179,7 @@ body {
     <div class="row">
 
         <div class="col-md-4">
+
             <div class="templatemo_home_midleft">LEFT BOX</div>
 
             <div class="paypal-section">
@@ -192,6 +187,7 @@ body {
                 <div class="paypal-subtitle">Support the project</div>
                 <div id="paypal-container-2FGRU9WXMWF8U"></div>
             </div>
+
         </div>
 
         <div class="col-md-4">
@@ -204,6 +200,46 @@ body {
 
     </div>
 </div>
+
+<!-- COUNTER -->
+<div class="site-counter">
+    <div class="counter-box">Today: <span id="today"></span></div>
+    <div class="counter-box">Yesterday: <span id="yesterday"></span></div>
+    <div class="counter-box">All: <span id="all"></span></div>
+    <div class="counter-box online">Online: <span id="online"></span></div>
+</div>
+
+<!-- COUNTER JS -->
+<script>
+(function(){
+
+    let today = localStorage.getItem("today") || 0;
+    let yesterday = localStorage.getItem("yesterday") || 0;
+    let all = localStorage.getItem("all") || 0;
+
+    const lastVisit = localStorage.getItem("lastVisit");
+    const now = new Date().toDateString();
+
+    if(lastVisit !== now){
+        yesterday = today;
+        today = 0;
+    }
+
+    today = parseInt(today) + 1;
+    all = parseInt(all) + 1;
+
+    localStorage.setItem("today", today);
+    localStorage.setItem("yesterday", yesterday);
+    localStorage.setItem("all", all);
+    localStorage.setItem("lastVisit", now);
+
+    document.getElementById("today").innerText = today;
+    document.getElementById("yesterday").innerText = yesterday;
+    document.getElementById("all").innerText = all;
+    document.getElementById("online").innerText = 1;
+
+})();
+</script>
 
 <!-- PAYPAL -->
 <script src="https://www.paypal.com/sdk/js?client-id=BAAEP5UkBLYS865bY3McFMLTe6Qw6QGPYZr34QpepJMoyToFFDRfYW9P0GLHBJ6rW5QiktDmcXkcn9PAJM&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
