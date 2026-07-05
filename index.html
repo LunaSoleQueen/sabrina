@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/templatemo_style.css">
 
-<!-- CURSOR CSS -->
-<link rel="stylesheet" href="css/cursor.css">
+<!-- CURSOR CSS (cache fix) -->
+<link rel="stylesheet" href="css/cursor.css?v=2">
 
 <style>
 html, body {
@@ -19,7 +19,9 @@ html, body {
     padding: 0;
     height: 100%;
     overflow-x: hidden;
-    cursor: none;
+
+    /* 🚨 EZ A LÉNYEG */
+    cursor: none !important;
 }
 
 body {
@@ -59,7 +61,6 @@ body {
     min-height: 500px !important;
     max-height: 500px !important;
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
 }
 
 .templatemo_home_midleft,
@@ -123,7 +124,7 @@ body {
 <body>
 
 <!-- CURSOR ELEMENT -->
-<div class="luxury-cursor-dot"></div>
+<div class="cursor-dot"></div>
 
 <video autoplay muted loop playsinline id="bg-video">
     <source src="images/web_bg_kicsi.mp4" type="video/mp4">
@@ -218,8 +219,8 @@ body {
 })();
 </script>
 
-<!-- CURSOR JS -->
-<script src="js/cursor.js"></script>
+<!-- CURSOR JS (cache fix) -->
+<script src="js/cursor.js?v=2"></script>
 
 </body>
 </html>
