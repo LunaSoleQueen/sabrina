@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/templatemo_style.css">
 
-<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -20,6 +19,20 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
+}
+
+/* DEBUG BANNER (EZT KERESD AZ OLDALON) */
+#debug {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: red;
+  color: white;
+  z-index: 99999;
+  font-size: 22px;
+  text-align: center;
+  padding: 5px;
 }
 
 /* BACKGROUND VIDEO */
@@ -65,25 +78,21 @@ html, body {
   border: 2px solid #ff66cc;
   border-radius: 16px;
   padding: 40px;
-  margin-top: 40px;
+  margin-top: 60px;
   color: #fff;
   text-align: center;
   backdrop-filter: blur(6px);
 }
 
-/* TITLE */
 .about-box h1 {
   font-size: 36px;
   letter-spacing: 3px;
   margin-bottom: 20px;
-  font-weight: 600;
 }
 
-/* TEXT */
 .about-box p {
   font-size: 16px;
   line-height: 1.8;
-  font-weight: 300;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -92,6 +101,11 @@ html, body {
 </head>
 
 <body>
+
+<!-- 🔴 DEBUG LINE -->
+<div id="debug">
+  HA EZT LÁTOD → EZ AZ AKTUÁLIS ABOUT.HTML FUT
+</div>
 
 <!-- BACKGROUND -->
 <video autoplay muted loop playsinline id="bg-video">
@@ -115,7 +129,6 @@ html, body {
 <!-- CONTENT -->
 <div class="container">
   <div class="row">
-
     <div class="col-md-12">
 
       <div class="about-box">
@@ -124,14 +137,13 @@ html, body {
 
         <p>
           Step inside and explore freely.<br><br>
-          Here, refined sensuality meets luxury aesthetics, creating an atmosphere that gently draws you in.<br><br>
+          Here, refined sensuality meets luxury aesthetics.<br><br>
           Let yourself be immersed… and become part of it.
         </p>
 
       </div>
 
     </div>
-
   </div>
 </div>
 
