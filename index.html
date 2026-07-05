@@ -44,11 +44,7 @@ body {
 }
 
 /* BOX STÍLUS */
-.templatemo_home_top_left,
-.templatemo_home_midleft,
-.templatemo_home_midmid,
-.templatemo_home_midright,
-.paypal-section {
+.box-style {
     background: rgba(130,70,200,.45);
     border: 2px solid #ff66cc;
     border-radius: 16px;
@@ -66,22 +62,24 @@ body {
     border-radius: 16px;
 }
 
-/* DONATE BOX FIX */
+/* DONATE FULL WIDTH */
 .paypal-section {
+    background: rgba(130,70,200,.45);
+    border: 2px solid #ff66cc;
+    border-radius: 16px;
+    padding: 25px;
     text-align: center;
-    overflow: hidden;
+    color: #fff;
+    backdrop-filter: blur(5px);
 }
 
-/* cím egy sorban */
 .paypal-title {
     font-size: 24px;
     letter-spacing: 4px;
     font-weight: 600;
-    margin-bottom: 5px;
     white-space: nowrap;
 }
 
-/* USD sor ne törjön */
 .paypal-subtitle {
     font-size: 13px;
     opacity: 0.9;
@@ -89,11 +87,11 @@ body {
     white-space: nowrap;
 }
 
-/* PayPal container szélesebb */
+/* PayPal center */
 #paypal-container-2FGRU9WXMWF8U {
-    width: 100%;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 /* COUNTER */
@@ -153,7 +151,7 @@ body {
     <div class="row">
 
         <div class="col-md-8">
-            <div class="templatemo_home_top_left">
+            <div class="box-style">
                 <h1>WELCOME</h1>
                 <p>Full screen video background site.</p>
             </div>
@@ -166,46 +164,38 @@ body {
     </div>
 </div>
 
-<!-- MAIN -->
+<!-- MAIN BOXES -->
 <div class="container">
     <div class="row">
 
-        <!-- LEFT + DONATE -->
         <div class="col-md-4">
+            <div class="box-style">LEFT BOX</div>
+        </div>
 
-            <div class="templatemo_home_midleft">
-                LEFT BOX
-            </div>
+        <div class="col-md-4">
+            <div class="box-style">CENTER BOX</div>
+        </div>
 
-            <!-- DONATE BOX (FIXED) -->
+        <div class="col-md-4">
+            <div class="box-style">RIGHT BOX</div>
+        </div>
+
+    </div>
+
+    <!-- DONATE FULL WIDTH (3 COL SPAN) -->
+    <div class="row">
+        <div class="col-md-12">
+
             <div class="paypal-section">
 
                 <div class="paypal-title">DONATE</div>
-
-                <div class="paypal-subtitle">
-                    Support the project
-                </div>
+                <div class="paypal-subtitle">Support the project</div>
 
                 <div id="paypal-container-2FGRU9WXMWF8U"></div>
 
             </div>
 
         </div>
-
-        <!-- CENTER -->
-        <div class="col-md-4">
-            <div class="templatemo_home_midmid">
-                CENTER BOX
-            </div>
-        </div>
-
-        <!-- RIGHT -->
-        <div class="col-md-4">
-            <div class="templatemo_home_midright">
-                RIGHT BOX
-            </div>
-        </div>
-
     </div>
 </div>
 
