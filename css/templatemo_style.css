@@ -45,3 +45,187 @@
 .paypal-subtitle {
     white-space: nowrap;
 }
+/* =====================================
+   LUNASOLEQUEEN NEON HEADER
+===================================== */
+
+.neon-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 25px auto 35px;
+    position: relative;
+    z-index: 10;
+}
+
+
+/* ÜVEGES NEON KERET */
+.neon-frame {
+
+    position: relative;
+
+    padding: 18px 70px;
+
+    background: rgba(70, 20, 100, 0.25);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 60px;
+
+    box-shadow:
+        inset 0 0 20px rgba(255,255,255,.15),
+        0 0 15px rgba(0,200,255,.6),
+        0 0 35px rgba(0,150,255,.4);
+
+}
+
+
+/* SZAKASZOS KÉK NEON ÍVES KERET */
+.neon-frame::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:-4px;
+
+    border-radius:60px;
+
+    background:
+    repeating-conic-gradient(
+        from 0deg,
+        #00d9ff 0deg 25deg,
+        transparent 25deg 45deg
+    );
+
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+
+    filter:
+        drop-shadow(0 0 5px #00d9ff)
+        drop-shadow(0 0 15px #00d9ff);
+
+}
+
+
+
+/* RÓZSASZÍN NEON FELIRAT */
+.neon-title {
+
+    font-size: 58px;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: 900;
+
+    letter-spacing: 8px;
+
+    color:#ff4fd8;
+
+    text-transform: uppercase;
+
+
+    text-align:center;
+
+
+    text-shadow:
+
+        0 0 5px #ffffff,
+        0 0 10px #ffb3f0,
+        0 0 20px #ff66dd,
+        0 0 40px #ff00cc,
+        0 0 80px #ff00cc;
+
+
+    animation: lunaNeon 3s infinite alternate;
+
+}
+
+
+
+/* ENYHE NEON VILLÓDZÁS */
+@keyframes lunaNeon {
+
+
+    0% {
+
+        opacity:.85;
+
+        text-shadow:
+
+        0 0 4px white,
+        0 0 10px #ff99ee,
+        0 0 25px #ff44cc,
+        0 0 50px #ff00cc;
+
+    }
+
+
+
+    45% {
+
+        opacity:1;
+
+    }
+
+
+
+    48% {
+
+        opacity:.75;
+
+    }
+
+
+
+    52% {
+
+        opacity:1;
+
+    }
+
+
+
+    100% {
+
+        opacity:.95;
+
+        text-shadow:
+
+        0 0 6px white,
+        0 0 15px #ffbbef,
+        0 0 35px #ff55dd,
+        0 0 70px #ff00cc,
+        0 0 100px #ff00cc;
+
+    }
+
+}
+
+
+/* MOBIL NÉZET */
+@media(max-width:768px){
+
+    .neon-frame{
+
+        padding:15px 25px;
+
+    }
+
+
+    .neon-title{
+
+        font-size:32px;
+
+        letter-spacing:4px;
+
+    }
+
+}
