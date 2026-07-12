@@ -146,6 +146,126 @@ body::before {
     border-color: #00ffcc;
 }
 
+
+/* =====================================
+   LUNASOLEQUEEN NEON HEADER
+===================================== */
+
+.neon-header {
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin:25px auto 35px;
+    position:relative;
+    z-index:999;
+}
+
+
+.neon-frame {
+
+    position:relative;
+    display:inline-block;
+
+    padding:18px 70px;
+
+    background:rgba(70,20,100,0.25);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:60px;
+
+
+    box-shadow:
+    inset 0 0 20px rgba(255,255,255,.15),
+    0 0 15px #00d9ff,
+    0 0 35px #0099ff;
+
+}
+
+
+
+.neon-frame::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:-5px;
+
+    border-radius:60px;
+
+    border:4px dashed #00d9ff;
+
+    box-shadow:
+    0 0 10px #00d9ff,
+    0 0 25px #00d9ff;
+
+}
+
+
+
+.neon-title {
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:58px;
+
+    font-weight:900;
+
+    letter-spacing:8px;
+
+    color:#ff4fd8;
+
+    text-transform:uppercase;
+
+
+    text-shadow:
+
+    0 0 5px white,
+    0 0 15px #ff66dd,
+    0 0 30px #ff00cc,
+    0 0 60px #ff00cc;
+
+
+    animation:lunaNeon 3s infinite alternate;
+
+}
+
+
+
+@keyframes lunaNeon {
+
+    0% {
+        opacity:.85;
+    }
+
+    50% {
+        opacity:1;
+    }
+
+    100% {
+        opacity:.9;
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .neon-frame {
+        padding:15px 25px;
+    }
+
+
+    .neon-title {
+        font-size:32px;
+        letter-spacing:4px;
+    }
+
+}
+
 </style>
 
 </head>
